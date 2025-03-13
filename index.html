@@ -1,27 +1,45 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <title>Strona magii szachowej</title>
+    <style>
+      body {
+        background-image: url("images/mag1.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        text-align: center;
+      }
+      button {
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function goToCharacterSheet(role) {
+        if (role === "student") {
+          window.location.href = "karta.html";
+        } else if (role === "mage") {
+          window.location.href = "mag.html";
+        }
+      }
+    </script>
   </head>
-  <body style="background-color: #d0fcc2;">
+  <body>
+    <h1>Kim jesteś?</h1>
 
-    <h1> kim jesteś?</h1>
-<button>
-     "uczniem Maga"
-</button>
-    <script>
-        src="dndbeyond-character-sheet.js"
-      </script>
+    <button onclick="goToCharacterSheet('student')">Uczeń Maga</button>
+
     <h1>...1..</h1>
-    <button>
-     "Magiem"
-</button>
-    <script>
-        src="dndbeyond-character-sheet.js"
-      </script>
+
+    <button onclick="goToCharacterSheet('mage')">Mag</button>
+
     <h1>...1..</h1>
-<p>23456789.</p>
-<h1>...1..</h1>
+
+    <p>23456789.</p>
+
+    <h1>...1..</h1>
   </body>
 </html>
