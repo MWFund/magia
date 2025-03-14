@@ -1,15 +1,6 @@
-
 body {
-    /* background-image: url('images/mag1.png'); */
-
-    background-image: url('images/mag1.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #464646; /* Kolor tła na wypadek, gdy obrazek nie załaduje */
-}
   font-family: Arial, sans-serif;
+  background-image: url("images/mag1.png");
   background-color: #222;
   color: white;
   display: flex;
@@ -17,7 +8,6 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
 .card {
   background-color: #333;
   padding: 20px;
@@ -62,28 +52,3 @@ input {
   padding: 5px;
   width: 80%;
 }
-
-.character-select {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.character-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-}
-
-.character-buttons button {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
-}
-
-.character-buttons button:hover {
-    background-color: #e0e0e0;
-}
-
