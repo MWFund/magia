@@ -11,99 +11,77 @@
       <header class="header">
         <img src="avatar.jpg" alt="Postać" />
         <div>
-          <h2 contenteditable="true" id="name">Jan Kowalski</h2>
-          <p contenteditable="true" id="info">
-            Poziom 1 | Górski Krasnolud | Początkujący
-          </p>
+          <h2 id="name">Jan Kowalski</h2>
+          <p id="info">Poziom 1 | Górski Krasnolud | Początkujący</p>
         </div>
       </header>
 
       <section class="stats">
         <div class="stat">
           Siła
-          <p contenteditable="true">1</p>
+          <p>1</p>
         </div>
         <div class="stat">
           Zręczność
-          <p contenteditable="true">1</p>
+          <p>1</p>
         </div>
         <div class="stat">
           Kondycja
-          <p contenteditable="true">12</p>
+          <p>12</p>
         </div>
         <div class="stat">
           Inteligencja
-          <p contenteditable="true">12</p>
+          <p>12</p>
         </div>
         <div class="stat">
           Mądrość
-          <p contenteditable="true">1</p>
+          <p>1</p>
         </div>
         <div class="stat">
           Charyzma
-          <p contenteditable="true">1</p>
+          <p>1</p>
         </div>
       </section>
 
       <section class="status">
         <h3>Status</h3>
-        <p><b>Punkty życia:</b> <span contenteditable="true">55</span>/75</p>
-        <p><b>Prędkość:</b> <span contenteditable="true">25 ft</span></p>
-        <p><b>Inicjatywa:</b> <span contenteditable="true">+2</span></p>
-        <p><b>KP:</b> <span contenteditable="true">15</span></p>
-        <p><b>Odpornści:</b> <span contenteditable="true">Trucizna</span></p>
+        <p><b>Punkty życia:</b> <span>55</span>/75</p>
+        <p><b>Prędkość:</b> <span>25 ft</span></p>
+        <p><b>Inicjatywa:</b> <span>+2</span></p>
+        <p><b>KP:</b> <span>15</span></p>
+        <p><b>Odpornści:</b> <span>Trucizna</span></p>
       </section>
 
       <section class="skills">
         <h3>Umiejętności</h3>
-        <p>Akrobatyka (Zr): <span contenteditable="true">+2</span></p>
-        <p>Atletyka (Sił): <span contenteditable="true">+6</span></p>
-        <p>Percepcja (Mąd): <span contenteditable="true">+7</span></p>
-        <p>Oszustwo (Cha): <span contenteditable="true">+0</span></p>
+        <p>Akrobatyka (Zr): <span>+2</span></p>
+        <p>Atletyka (Sił): <span>+6</span></p>
+        <p>Percepcja (Mąd): <span>+7</span></p>
+        <p>Oszustwo (Cha): <span>+0</span></p>
       </section>
 
       <section class="death-saves">
         <h3>Testy śmierci</h3>
-        <p>Sukcesy: <span contenteditable="true">0</span></p>
-        <p>Porażki: <span contenteditable="true">0</span></p>
+        <p>Sukcesy: <span>0</span></p>
+        <p>Porażki: <span>0</span></p>
       </section>
 
       <section class="abilities">
         <h3>Zdolności</h3>
         <ul id="abilities">
-          <li>
-            <span contenteditable="true">🌀 Dzika Forma</span>:
-            <span contenteditable="true">1/2</span>
-            <button onclick="removeAbility(this)">Usuń</button>
-          </li>
-          <li>
-            <span contenteditable="true">👁 Oczy Grobu</span>:
-            <span contenteditable="true">3/3</span>
-            <button onclick="removeAbility(this)">Usuń</button>
-          </li>
+          <li><span>🌀 Dzika Forma</span>: <span>1/2</span></li>
+          <li><span>👁 Oczy Grobu</span>: <span>3/3</span></li>
         </ul>
-        <input type="text" id="newAbilityName" placeholder="Nazwa zdolności" />
-        <input type="text" id="newAbilityValue" placeholder="Wartość" />
-        <button onclick="addAbility()">Dodaj</button>
       </section>
 
       <section class="inventory">
         <h3>Wyposażenie</h3>
         <ul id="inventory">
-          <li>
-            ⚔️ Włoski atak <button onclick="removeItem(this)">Usuń</button>
-          </li>
-          <li>
-            🌿 Atak królowej <button onclick="removeItem(this)">Usuń</button>
-          </li>
-          <li>
-            🎯 Pchnięcie środka <button onclick="removeItem(this)">Usuń</button>
-          </li>
+          <li>⚔️ Włoski atak</li>
+          <li>🌿 Atak królowej</li>
+          <li>🎯 Pchnięcie środka</li>
         </ul>
-        <input type="text" id="newItem" placeholder="Dodaj przedmiot" />
-        <button onclick="addItem()">Dodaj</button>
       </section>
     </main>
-    <script src="script.js"></script>
   </body>
 </html>
