@@ -16,6 +16,14 @@ body {
   width: 750px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
+.card1 {
+  background-color: #5e5c5c;
+  opacity: 0.9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 750px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
 .stats {
   display: flex;
   justify-content: space-between;
