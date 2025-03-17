@@ -45,11 +45,23 @@
 
       <section class="section">
         <h3>Bronie</h3>
-        <p><b>Mat Beniowskiego:</b></p>
-        <p><b>Mat pionkiem:</b></p>
-        <p><b>Mat rentgenem:</b></p>
-        <p><b>Partia Włoska:</b></p>
-        <p><b>Obrona Caro-Kann:</b></p>
+        <p><b>Mat Beniowskiego</b></p>
+        <p><b>Mat pionkiem</b></p>
+        <p><b>Mat rentgenem</b></p>
+        <p><b>Partia Włoska</b></p>
+        <p><b>Obrona Caro-Kann</b></p>
+
+        <form id="bron-form">
+          <input
+            type="text"
+            id="new-bron"
+            placeholder="Wpisz nazwę broni"
+            required
+          />
+          <button type="submit">Dodaj</button>
+        </form>
+
+        <h4>Dodaj nową broń:</h4>
       </section>
 
       <section class="section">
@@ -87,5 +99,34 @@
         </ul>
       </section>
     </main>
+
+    <script>
+      // Funkcja dodająca nową broń do sekcji, przed nagłówkiem "Dodaj nową broń"
+      document
+        .getElementById("bron-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Zatrzymuje domyślne przesyłanie formularza
+
+          // Pobranie wartości z inputa
+          const newBron = document.getElementById("new-bron").value;
+
+          if (newBron.trim() !== "") {
+            // Sprawdza, czy tekst nie jest pusty
+            // Tworzymy nowy element <p> z nazwą broni
+            const newBrońElement = document.createElement("p");
+            newBrońElement.innerHTML = `<b>${newBron}</b>`;
+
+            // Dodajemy nowy element przed nagłówkiem "Dodaj nową broń"
+            const section = document.querySelector(".section");
+            const formSection = document.getElementById("bron-form");
+            section.insertBefore(newBrońElement, formSection);
+
+            // Czyszczenie pola tekstowego po dodaniu
+            document.getElementById("new-bron").value = "";
+          } else {
+            alert("Proszę wpisać nazwę broni!");
+          }
+        });
+    </script>
   </body>
 </html>
