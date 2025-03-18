@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>Strona magii szachowej</title>
     <style>
       body {
         background-image: url("images/mag1.png");
         background-size: cover;
-        background-position: center;
+        background-position: center 40%;
         background-attachment: fixed;
         text-align: center;
+        margin: 0;
+        height: 100vh; /* Ustawienie wysokości body na 100% wysokości okna */
       }
+
+      /* Kontener na napisy i przyciski */
+      .content {
+        position: fixed; /* Ustawienie kontenera w stałej pozycji względem okna */
+        bottom: 20px; /* Odległość od dolnej krawędzi okna */
+        left: 50%; /* Wyśrodkowanie w poziomie */
+        transform: translateX(-50%); /* Dokładne wyśrodkowanie */
+        width: 100%;
+        text-align: center;
+      }
+
       h1 {
         font-family: "Georgia", serif;
         font-size: 3em;
         text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-        margin-top: 2%;
+        margin: 0;
         letter-spacing: 2px;
         color: #f1f1f1;
       }
+
       button {
         font-size: 20px;
         padding: 15px 30px;
@@ -30,6 +45,7 @@
         transition: all 0.3s ease;
       }
     </style>
+
     <script>
       function goToCharacterSheet(role) {
         if (role === "student") {
@@ -41,10 +57,13 @@
     </script>
   </head>
   <body>
-    <h1>Strona magii szachowej</h1>
+    <!-- Dodajemy kontener na napisy i przyciski -->
+    <div class="content">
+      <h1>Strona magii szachowej</h1>
 
-    <button onclick="goToCharacterSheet('student')">Uczeń Maga</button>
+      <button onclick="goToCharacterSheet('student')">Uczeń Maga</button>
 
-    <button onclick="goToCharacterSheet('mage')">Mag</button>
+      <button onclick="goToCharacterSheet('mage')">Mag</button>
+    </div>
   </body>
 </html>
