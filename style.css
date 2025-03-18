@@ -4,9 +4,15 @@ body {
   background-color: #222;
   color: white;
   display: flex;
+  background-size: cover;
+  background-position: center 40%;
+  background-attachment: fixed;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+h3 {
+  color: rgb(160, 155, 155);
 }
 .card {
   background-color: #333;
@@ -48,6 +54,16 @@ button {
   padding: 5px 10px;
   margin-left: 5px;
   cursor: pointer;
+}
+a {
+  color: #f1f1f1; /* Kolor tekstu linku */
+  text-decoration: none; /* Usunięcie podkreślenia */
+  font-size: 20px;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Płynne przejście zmian */
+}
+a:hover {
+  color: #ecec33; /* Zmiana koloru tekstu na niebieski */
+  text-shadow: 0 0 10px rgb(239, 221, 22); /* Dodanie efektu świecenia */
 }
 input {
   margin-top: 5px;
