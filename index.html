@@ -51,25 +51,13 @@
         border-color: #eba627; /* Zmiana koloru obramowania na niebieski */
       }
     </style>
-
-    <script>
-      function goToCharacterSheet(role) {
-        if (role === "student") {
-          window.location.href = "karta.html";
-        } else if (role === "mage") {
-          window.location.href = "mag.html";
-        }
-      }
-    </script>
   </head>
   <body>
     <!-- Dodajemy kontener na napisy i przyciski -->
     <div class="content">
       <h1>Strona magii szachowej</h1>
-
-      <button onclick="goToCharacterSheet('student')">Uczeń Maga</button>
-
-      <button onclick="goToCharacterSheet('mage')">Mag</button>
+      <a href="karta.html"><button>Uczeń Maga</button></a>
+      <a href="mag.html"><button>Mag</button></a>
     </div>
   </body>
 </html>
