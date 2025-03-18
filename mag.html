@@ -106,7 +106,7 @@
         const skillElement = document.getElementById(id);
         let currentValue = parseInt(skillElement.textContent.replace("+", "")); // Pobiera aktualną wartość, usuwając "+"
         currentValue += change; // Zwiększa lub zmniejsza o 1
-        skillElement.textContent = `+${currentValue}`; // Ustawia nową wartość z prefiksem "+"
+        skillElement.textContent = `${currentValue}`; // Ustawia nową wartość z prefiksem "+"
       }
     </script>
   </body>
