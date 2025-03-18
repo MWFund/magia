@@ -12,7 +12,7 @@
         <img src="images/jas.png" alt="Postać" />
         <div>
           <h2 id="name">Jan Kowalski</h2>
-          <p id="info">Liga 1 | Kategoria szachowa IV | Początkujący</p>
+          <p id="info">Liga 1 | Kategoria szachowa IV | Początkujący ♟️</p>
         </div>
       </header>
 
@@ -66,10 +66,26 @@
 
       <section class="section">
         <h3>Umiejętności</h3>
-        <p>Mat Beniowskiego: <span>+2</span></p>
-        <p>Mat pionkiem: <span>+6</span></p>
-        <p>Mat rentgenem: <span>+7</span></p>
-        <p>Obrona Caro-Kann: <span>+0</span></p>
+        <div class="skill">
+          <p>Mat Beniowskiego: <span id="mat-beniowskiego-level">2</span></p>
+          <button onclick="changeSkillLevel('mat-beniowskiego', 1)">+</button>
+          <button onclick="changeSkillLevel('mat-beniowskiego', -1)">-</button>
+        </div>
+        <div class="skill">
+          <p>Mat pionkiem: <span id="mat-pionkiem-level">6</span></p>
+          <button onclick="changeSkillLevel('mat-pionkiem', 1)">+</button>
+          <button onclick="changeSkillLevel('mat-pionkiem', -1)">-</button>
+        </div>
+        <div class="skill">
+          <p>Mat rentgenem: <span id="mat-rentgenem-level">7</span></p>
+          <button onclick="changeSkillLevel('mat-rentgenem', 1)">+</button>
+          <button onclick="changeSkillLevel('mat-rentgenem', -1)">-</button>
+        </div>
+        <div class="skill">
+          <p>Obrona Caro-Kann: <span id="obrona-caro-kann-level">2</span></p>
+          <button onclick="changeSkillLevel('obrona-caro-kann', 1)">+</button>
+          <button onclick="changeSkillLevel('obrona-caro-kann', -1)">-</button>
+        </div>
       </section>
 
       <section class="section">
@@ -99,6 +115,21 @@
     </main>
 
     <script>
+      // Funkcja zmieniająca poziom umiejętności
+      function changeSkillLevel(skillId, change) {
+        const skillElement = document.getElementById(`${skillId}-level`);
+        let currentLevel = parseInt(skillElement.innerText);
+        currentLevel += change;
+
+        // Zapewniamy, że poziom nie spadnie poniżej 0
+        if (currentLevel < 0) {
+          currentLevel = 0;
+        }
+
+        // Uaktualniamy wyświetlany poziom umiejętności
+        skillElement.innerText = currentLevel;
+      }
+
       // Funkcja dodająca nową broń do sekcji, przed nagłówkiem "Dodaj nową broń"
       document
         .getElementById("bron-form")
