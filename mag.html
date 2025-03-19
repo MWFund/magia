@@ -11,8 +11,8 @@
       <header class="header">
         <img src="images/jas.png" alt="Postać" />
         <div>
-          <h2 id="name">Jan Kowalski</h2>
-          <p id="info">
+          <h2>Jan Kowalski</h2>
+          <p>
             Kategoria szachowa IV |
             <a href="ranking.html">Ranking 12/30 🏆 </a> |
             <a href="https://ratings.fide.com/profile/41848705"
@@ -60,60 +60,61 @@
 
       <section class="section">
         <h3>Umiejętności 📉</h3>
-        <p>
-          Mistrz taktyki: <span id="mat-beniowskiego">2</span>
-          <button onclick="zmien('mat-beniowskiego', 1)">Zwiększ</button>
-          <button onclick="zmien('mat-beniowskiego', -1)">Zmniejsz</button>
-        </p>
+        <div class="skill">
+          <a href="mistrzfigur.html"><p>Mistrz figur</p></a>
+        </div>
+        <div class="skill">
+          <p>Mistrz taktyki</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz strategii</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz ocena pozycji</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz wyceny figur</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz liczenia kombinacji</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz otwarć</p>
+        </div>
 
-        <p>
-          Mistrz strategii: <span id="mat-pionkiem">6</span>
-          <button onclick="zmien('mat-pionkiem', 1)">Zwiększ</button>
-          <button onclick="zmien('mat-pionkiem', -1)">Zmniejsz</button>
-        </p>
-
-        <p>
-          Mistrz ocena pozycji: <span id="mat-rentgenem">7</span>
-          <button onclick="zmien('mat-rentgenem', 1)">Zwiększ</button>
-          <button onclick="zmien('mat-rentgenem', -1)">Zmniejsz</button>
-        </p>
-
-        <p>
-          Mistrz wyceny figur: <span id="caro-kann">0</span>
-          <button onclick="zmien('caro-kann', 1)">Zwiększ</button>
-          <button onclick="zmien('caro-kann', -1)">Zmniejsz</button>
-        </p>
+        <h3>Dodaj nową umiejętność:</h3>
+        <form id="skill-form">
+          <select id="new-skill">
+            <option value="Mistrz końcówek">Mistrz końcówek</option>
+            <option value="Mistrz obrony">Mistrz motywów</option>
+            <option value="Mistrz ataku">Mistrz systematyczności</option>
+            <option value="Mistrz gry pozycyjnej">Mistrz emocji</option>
+          </select>
+          <button type="submit">Dodaj</button>
+        </form>
       </section>
 
       <section class="section">
-        <a href="mapa.html"><h3>Mapa 📜</h3></a>
+        <h3>Mapa 📜</h3>
+        <a href="mapa.html">Zobacz mapę</a>
       </section>
 
       <section class="section">
         <h3>Podnoszenie poziomu broni 🧩</h3>
-        <ul id="abilities">
-          <li><span>⛏️ Mat Beniowskiego</span>: <span>1/2</span></li>
-          <li><span>👁 Obrona Caro-Kann</span>: <span>3/3</span></li>
+        <ul>
+          <li>⛏️ Mat Beniowskiego: 1/2</li>
+          <li>👁 Obrona Caro-Kann: 3/3</li>
         </ul>
       </section>
 
       <section class="section">
         <h3>Odznaki 🥇</h3>
-        <ul id="inventory">
+        <ul>
           <li>⚔️ Włoski atak</li>
           <li>🌿 Atak królowej</li>
           <li>🎯 Pchnięcie środka</li>
         </ul>
       </section>
     </main>
-    <script>
-      // Funkcja zmieniająca wartość umiejętności (zwiększanie lub zmniejszanie)
-      function zmien(id, change) {
-        const skillElement = document.getElementById(id);
-        let currentValue = parseInt(skillElement.textContent.replace("+", "")); // Pobiera aktualną wartość, usuwając "+"
-        currentValue += change; // Zwiększa lub zmniejsza o 1
-        skillElement.textContent = `${currentValue}`; // Ustawia nową wartość z prefiksem "+"
-      }
-    </script>
   </body>
 </html>
