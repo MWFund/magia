@@ -12,7 +12,13 @@
         <img src="images/jas.png" alt="Postać" />
         <div>
           <h2 id="name">Jan Kowalski</h2>
-          <p id="info">Liga 1 🏆 | Kategoria szachowa IV | Początkujący ♟️</p>
+          <p id="info">
+            Kategoria szachowa IV |
+            <a href="ranking.html">Ranking 12/30 🏆 </a> |
+            <a href="https://ratings.fide.com/profile/41848705"
+              >Ranking FIDE ♟️</a
+            >
+          </p>
         </div>
       </header>
 
@@ -38,7 +44,7 @@
           <p>1</p>
         </div>
         <div class="stat">
-          Punkty
+          Charyzma
           <p>1</p>
         </div>
       </section>
@@ -50,42 +56,39 @@
         <p><b>Mat rentgenem</b></p>
         <p><b>Partia Włoska</b></p>
         <p><b>Obrona Caro-Kann</b></p>
-
-        <form id="bron-form">
-          <input
-            type="text"
-            id="new-bron"
-            placeholder="Wpisz nazwę broni"
-            required
-          />
-          <button type="submit">Dodaj</button>
-        </form>
-
-        <h4>Dodaj nową broń:</h4>
       </section>
 
       <section class="section">
         <h3>Umiejętności 📉</h3>
         <div class="skill">
-          <p>Mat Beniowskiego: <span id="mat-beniowskiego-level">2</span></p>
-          <button onclick="changeSkillLevel('mat-beniowskiego', 1)">+</button>
-          <button onclick="changeSkillLevel('mat-beniowskiego', -1)">-</button>
+          <p>Mistrz taktyki</p>
         </div>
         <div class="skill">
-          <p>Mat pionkiem: <span id="mat-pionkiem-level">6</span></p>
-          <button onclick="changeSkillLevel('mat-pionkiem', 1)">+</button>
-          <button onclick="changeSkillLevel('mat-pionkiem', -1)">-</button>
+          <p>Mistrz strategii</p>
         </div>
         <div class="skill">
-          <p>Mat rentgenem: <span id="mat-rentgenem-level">7</span></p>
-          <button onclick="changeSkillLevel('mat-rentgenem', 1)">+</button>
-          <button onclick="changeSkillLevel('mat-rentgenem', -1)">-</button>
+          <p>Mistrz ocena pozycji</p>
         </div>
         <div class="skill">
-          <p>Obrona Caro-Kann: <span id="obrona-caro-kann-level">2</span></p>
-          <button onclick="changeSkillLevel('obrona-caro-kann', 1)">+</button>
-          <button onclick="changeSkillLevel('obrona-caro-kann', -1)">-</button>
+          <p>Mistrz wyceny figur</p>
         </div>
+        <div class="skill">
+          <p>Mistrz liczenia kombinacji</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz otwarć</p>
+        </div>
+
+        <h3>Dodaj nową umiejętność:</h3>
+        <form id="skill-form">
+          <select id="new-skill">
+            <option value="Mistrz końcówek">Mistrz końcówek</option>
+            <option value="Mistrz obrony">Mistrz motywów</option>
+            <option value="Mistrz ataku">Mistrz systematyczności</option>
+            <option value="Mistrz gry pozycyjnej">Mistrz emocji</option>
+          </select>
+          <button type="submit">Dodaj</button>
+        </form>
       </section>
 
       <section class="section">
@@ -105,7 +108,7 @@
       </section>
 
       <section class="section">
-        <h3>Odznaki 🥇</h3>
+        <h3>Odznaki 🏅</h3>
         <ul id="inventory">
           <li>⚔️ Włoski atak</li>
           <li>🌿 Atak królowej</li>
@@ -113,49 +116,5 @@
         </ul>
       </section>
     </main>
-
-    <script>
-      // Funkcja zmieniająca poziom umiejętności
-      function changeSkillLevel(skillId, change) {
-        const skillElement = document.getElementById(`${skillId}-level`);
-        let currentLevel = parseInt(skillElement.innerText);
-        currentLevel += change;
-
-        // Zapewniamy, że poziom nie spadnie poniżej 0
-        if (currentLevel < 0) {
-          currentLevel = 0;
-        }
-
-        // Uaktualniamy wyświetlany poziom umiejętności
-        skillElement.innerText = currentLevel;
-      }
-
-      // Funkcja dodająca nową broń do sekcji, przed nagłówkiem "Dodaj nową broń"
-      document
-        .getElementById("bron-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Zatrzymuje domyślne przesyłanie formularza
-
-          // Pobranie wartości z inputa
-          const newBron = document.getElementById("new-bron").value;
-
-          if (newBron.trim() !== "") {
-            // Sprawdza, czy tekst nie jest pusty
-            // Tworzymy nowy element <p> z nazwą broni
-            const newBrońElement = document.createElement("p");
-            newBrońElement.innerHTML = `<b>${newBron}</b>`;
-
-            // Dodajemy nowy element przed nagłówkiem "Dodaj nową broń"
-            const section = document.querySelector(".section");
-            const formSection = document.getElementById("bron-form");
-            section.insertBefore(newBrońElement, formSection);
-
-            // Czyszczenie pola tekstowego po dodaniu
-            document.getElementById("new-bron").value = "";
-          } else {
-            alert("Proszę wpisać nazwę broni!");
-          }
-        });
-    </script>
   </body>
 </html>

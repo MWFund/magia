@@ -58,7 +58,7 @@ button {
 a {
   color: #f1f1f1; /* Kolor tekstu linku */
   text-decoration: none; /* Usunięcie podkreślenia */
-  font-size: 20px;
+  font-size: 16px;
   transition: color 0.3s ease, text-shadow 0.3s ease; /* Płynne przejście zmian */
 }
 a:hover {
