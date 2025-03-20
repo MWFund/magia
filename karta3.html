@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background-image: url("images/mag1.png");
+  background-position: center; /* Wyśrodkowanie tła */
+  background-repeat: no-repeat; /* Zapobiega powtarzaniu tła */
+  background-size: cover; /* Dopasowuje tło do rozmiaru okna */
+  font-family: "Lato", sans-serif;
+      }
+
+      #container {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #menu {
+        background-color: #676969;
+        margin-top: 20px;
+        opacity: 0.9;
+        color: #ffffff;
+        padding: 10px;
+      }
+
+      #topbar {
+        background-color: #676969;
+        color: white;
+        padding: 10px;
+        opacity: 0.9;
+        margin-top: 20px;
+        margin-bottom: 25px;
+        height: 170px;
+      }
+
+      #topbarL {
+        float: left;
+        padding: 20px;
+        width: 138px;
+        opacity: 0.9;
+        text-align: center;
+        border-right: 2px dotted #cccccc;
+      }
+
+      #topbarR {
+        float: left;
+        padding: 20px;
+        opacity: 0.9;
+        width: 760px;
+        font-size: 16px;
+        text-align: justify;
+      }
+
+      #sidebar {
+        float: left;
+        width: 250px; /* Zwiększona szerokość sidebar */
+        min-height: 620px;
+        padding: 20px;
+        background-color: #676969;
+        text-align: left; /* Zmieniono na left, żeby lista była wyświetlana poprawnie */
+        font-size: 18px;
+        color: #ffffff;
+        opacity: 0.9;
+        border-right: 2px dotted #666666;
+      }
+
+      #content {
+        float: left;
+        padding: 40px;
+        opacity: 0.5;
+        width: 627px;
+        background-color: #504e4e;
+        color: #ffffff;
+        min-height: 680px;
+        text-align: justify;
+      }
+
+      #footer {
+        clear: both;
+        background-color: #676969;
+        margin-top: 20px;
+        opacity: 0.9;
+        color: #ffffff;
+        padding: 10px;
+      }
+	  #sidebar .skill:hover {
+  background-color: #8f8d8d; /* Kolor podświetlenia (możesz zmienić na dowolny) */
+  color: white; /* Zmienia kolor tekstu na biały podczas najechania */
+}
+a {
+  color: #f1f1f1; /* Kolor tekstu linku */
+  text-decoration: none; /* Usunięcie podkreślenia */
+  font-size: 16px;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Płynne przejście zmian */
+}
+a:hover {
+  color: #ecec33; /* Zmiana koloru tekstu na niebieski */
+  text-shadow: 0 0 10px rgb(239, 221, 22); /* Dodanie efektu świecenia */
+}
+      .option {
+        float: left;
+        min-width: 50px;
+        height: 25px;
+        font-size: 18px;
+        padding: 10px;
+        border-right: 2px dotted #444444;
+        opacity: 0.8;
+      }
+	  .option:hover {
+  background-color: #918f8e; /* Kolor podświetlenia (możesz zmienić na dowolny) */
+  color: white; /* Zmienia kolor tekstu na biały podczas najechania */
+	  }
+      /* Usunięcie podświetlenia z opcji */
+      .optionL {
+        font-size: 18px;
+        height: 25px;
+        padding: 10px;
+        border-bottom: 2px dotted #444444;
+      }
+
+      .bigtitle {
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: 2px;
+      }
+
+      .dottedline {
+        height: 5px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        border-bottom: 2px dotted #444444;
+      }
+
+      /* Nowy styl dla listy broni */
+      .weapon-category {
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      .weapon-list {
+        padding-left: 20px;
+      }
+
+      .weapon-item {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="menu">
+        <div class="option">Siła 5/10</div>
+        <div class="option">Zręczność 3/10</div>
+        <div class="option">Kondycja 2/10</div>
+        <div class="option">Polecenia 1/10</div>
+        <div class="option">Mądrość 9/10</div>
+        <div class="option">Inteligencja 2/10</div>
+        <div style="clear: both"></div>
+      </div>
+
+      <div id="topbar">
+        <div id="topbarL">
+          <img src="images/jas2.png" width="100" height="100" />
+        </div>
+        <div id="topbarR">
+          <span class="bigtitle">Gandalf</span>
+          <div style="height: 15px"></div>
+          <p id="info">
+            Kategoria szachowa IV |
+            <a href="ranking.html">Ranking 12/30 🏆 </a> |
+            <a href="https://ratings.fide.com/profile/41848705"
+              >Ranking FIDE ♟️</a
+            >
+          </p>
+        </div>
+        <div style="clear: both"></div>
+      </div>
+
+      <div id="sidebar">
+        <h3>Bronie 🏹</h3>
+        <div class="skill"><p>Mat Beniowskiego</p></div>
+        <div class="skill"><p>Mat pionkiem</p></div>
+			<div class="skill"><p>Mat rentgenem</p></div>
+				<div class="skill"><p>Partia Włoska</p></div>
+					<div class="skill"><p>Obrona Caro-Kann</p></div>
+        <h3>Umiejętności 📉</h3>
+        <div class="skill">
+          <a href="mistrzfigur.html"
+            ><p><b>Mistrz figur</b></p></a
+          >
+        </div>
+        <div class="skill">
+          <p>Mistrz taktyki</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz strategii</p>
+        </div>
+
+        <div class="skill">
+          <p>Mistrz ocena pozycji</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz wyceny figur</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz liczenia kombinacji</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz otwarć</p>
+        </div>
+        <h3>Dodaj nową umiejętność:</h3>
+        <form id="skill-form">
+          <select id="new-skill">
+            <option value="Mistrz końcówek">Mistrz końcówek</option>
+            <option
+              value="Mistrz przewidywania
+            widzenie zagrożeń
+            "
+            >
+              Mistrz przewidywania, widzenie zagrożeń
+            </option>
+            <option value="Mistrz obrony">Mistrz motywów</option>
+            <option value="Mistrz ataku">Mistrz systematyczności</option>
+            <option value="Mistrz gry pozycyjnej">Mistrz emocji</option>
+            <option value=" Mistrz wytrzymywania presji">
+              Mistrz wytrzymywania presji
+            </option>
+          </select>
+          <button type="submit">Dodaj</button>
+        </form>
+      </section>
+
+      </div>
+
+      <div id="content">
+        <span class="bigtitle"></span>
+        <div class="dottedline"></div>
+      </div>
+
+      <div id="footer">
+        <a href="ranking.html"><h3>Wyzwanie na pojedynek ⚔️</h3></a>
+      </div>
+      <div id="footer">
+        <a href="mapa.html"><h3>Mapa 📜</h3></a>
+      </div>
+      <div id="footer">
+        <h3>Podnoszenie poziomu broni 🧩</h3>
+        <ul id="abilities">
+          <li><span>⛏️ Mat Beniowskiego</span>: <span>1/2</span></li>
+          <li><span>👁 Obrona Caro-Kann</span>: <span>3/3</span></li>
+        </ul>
+      </div>
+      <div id="footer">
+        <h3>Odznaki 🏅</h3>
+        <ul id="inventory">
+          <li>⚔️ Włoski atak</li>
+          <li>🌿 Atak królowej</li>
+          <li>🎯 Pchnięcie środka</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
