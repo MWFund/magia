@@ -8,18 +8,18 @@
   background-position: center; /* Wyśrodkowanie tła */
   background-repeat: no-repeat; /* Zapobiega powtarzaniu tła */
   background-size: cover; /* Dopasowuje tło do rozmiaru okna */
-  font-family: "Lato", sans-serif;
+  
       }
 
       #container {
-        width: 1000px;
+        width: 900px;
         margin-left: auto;
         margin-right: auto;
       }
 
       #menu {
         background-color: #676969;
-        margin-top: 20px;
+        margin-top: 10px;
         opacity: 0.9;
         color: #ffffff;
         padding: 10px;
@@ -48,7 +48,7 @@
         float: left;
         padding: 20px;
         opacity: 0.9;
-        width: 760px;
+        width: 660px;
         font-size: 16px;
         text-align: justify;
       }
@@ -69,8 +69,8 @@
       #content {
         float: left;
         padding: 40px;
-        opacity: 0.5;
-        width: 627px;
+        opacity: 0.8 ;
+        width: 527px;
         background-color: #504e4e;
         color: #ffffff;
         min-height: 680px;
@@ -86,8 +86,8 @@
         padding: 10px;
       }
 	  #sidebar .skill:hover {
-  background-color: #8f8d8d; /* Kolor podświetlenia (możesz zmienić na dowolny) */
-  color: white; /* Zmienia kolor tekstu na biały podczas najechania */
+      text-shadow: 0 0 10px rgb(239, 221, 22);
+      color: rgb(221, 205, 27); /* Zmienia kolor tekstu na biały podczas najechania */
 }
 a {
   color: #f1f1f1; /* Kolor tekstu linku */
@@ -109,8 +109,9 @@ a:hover {
         opacity: 0.8;
       }
 	  .option:hover {
-  background-color: #918f8e; /* Kolor podświetlenia (możesz zmienić na dowolny) */
-  color: white; /* Zmienia kolor tekstu na biały podczas najechania */
+ 
+      text-shadow: 0 0 10px rgb(239, 221, 22);
+     color: rgb(239, 221, 22); /* Zmienia kolor tekstu na biały podczas najechania */
 	  }
       /* Usunięcie podświetlenia z opcji */
       .optionL {
@@ -147,6 +148,76 @@ a:hover {
       .weapon-item {
         margin-bottom: 10px;
       }
+      .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-image {
+      width: 100%;
+      flex: 0 0 100%;
+    }
+
+    .carousel img {
+      opacity: 0.9 ;
+      width: 65%;
+      margin-left: 20%;
+      height: auto;
+    }
+
+    /* Ukrycie przycisków radio */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Strzałki */
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .prev, .next {
+      
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Przemieszczanie slajdów */
+    #slide1:checked ~ .carousel-images {
+      transform: translateX(0);
+    }
+
+    #slide2:checked ~ .carousel-images {
+      transform: translateX(-100%);
+    }
+
+    #slide3:checked ~ .carousel-images {
+      transform: translateX(-200%);
+    }
+
+    /* Stylowanie przycisków strzałek */
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
     </style>
   </head>
 
@@ -237,8 +308,34 @@ a:hover {
       </div>
 
       <div id="content">
-        <span class="bigtitle"></span>
+        <span class="bigtitle">Wybór postaci</span>
         <div class="dottedline"></div>
+        <div class="carousel">
+          <!-- Radio buttons do zmiany slajdów -->
+          <input type="radio" id="slide1" name="carousel" checked>
+          <input type="radio" id="slide2" name="carousel">
+          <input type="radio" id="slide3" name="carousel">
+        
+          <div class="carousel-images">
+            <div class="carousel-image">
+              <img src="images/c.png" alt="Zdjęcie 1">
+            </div>
+            <div class="carousel-image">
+              <img src="images/b.png" alt="Zdjęcie 2">
+            </div>
+            <div class="carousel-image">
+              <img src="https://via.placeholder.com/600x300?text=Zdjęcie+3" alt="Zdjęcie 3">
+            </div>
+          </div>
+        
+          <!-- Strzałki do nawigacji -->
+          <div class="carousel-controls">
+            <label for="slide1" class="prev">❮</label>
+            <label for="slide2" class="next">❯</label>
+            
+          </div>
+        </div>
+        
       </div>
 
       <div id="footer">
