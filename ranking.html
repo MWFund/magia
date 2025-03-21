@@ -4,17 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista Zawodników</title>
-  </head>
-  <body>
     <style>
       body {
-        background-image: url("images/mag1.png");
+        background-image: url("images/mag2.png");
+        color: rgb(239, 239, 234);
+        font-family: Arial, sans-serif; /* Dodatkowa czcionka */
+      }
 
-        color: aliceblue;
+      h3 {
+        text-align: center; /* Wyśrodkowanie tytułu */
+        font-size: 36px; /* Zwiększenie rozmiaru czcionki dla tytułu */
+      }
+
+      ul {
+        list-style-type: none; /* Usunięcie punktów przed elementami listy */
+        padding: 0;
+        text-align: center; /* Wyśrodkowanie całej listy */
+      }
+
+      li {
+        font-size: 20px; /* Zwiększenie czcionki dla każdego elementu listy */
+        margin-bottom: 10px; /* Odstęp między elementami listy */
+      }
+
+      li b {
+        font-weight: bold; /* Pogrubienie nazwisk */
+      }
+      .image-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: center; /* Wyrównanie napisu do środka */
+        margin: 1%;
+      }
+
+      /* Styl dla obrazka */
+      .top-left-image {
+        width: 200px; /* Szerokość obrazka */
+        height: auto; /* Wysokość dopasowana proporcjonalnie */
+      }
+
+      /* Styl dla napisu */
+      .image-caption {
+        font-size: 20px; /* Rozmiar czcionki napisu */
+        margin-top: 1%; /* Odstęp między obrazkiem a napisem */
+        color: #f4f0f0; /* Kolor tekstu */
       }
     </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
+      <div class="image-caption">Gandalf</div>
+    </div>
     <h3>Lista Zawodników</h3>
-
     <ul>
       <li><b>Jan Kowalski</b> - Punkty: 25</li>
       <li><b>Agnieszka Nowak</b> - Punkty: 30</li>
