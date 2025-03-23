@@ -35,31 +35,23 @@
     <div id="games-container">Ładowanie gier...</div>
 
     <script>
-      // Funkcja do pobierania ostatnich publicznych gier z Twojego konta
       async function fetchMyPublicGames() {
-        const username = "Garuda1987"; // Zastąp swoją nazwą użytkownika
-        const url = `https://lichess.org/api/games/user/${username}?max=5`;
+        const username = "Garuda1987";
+        const url = `https://lichess.org/api/games/user/${username}?max=5&format=json`;
 
         try {
           const response = await fetch(url, {
-            headers: {
-              Accept: "application/x-ndjson",
-            },
+            headers: { Accept: "application/x-ndjson" },
           });
 
-          if (!response.ok) {
-            throw new Error(`Błąd: ${response.statusText}`);
-          }
+          if (!response.ok) throw new Error(`Błąd: ${response.statusText}`);
 
-          const responseText = await response.text(); // Pobierz NDJSON jako tekst
-          console.log("Odpowiedź NDJSON:", responseText);
-
-          const games = responseText
+          const games = (await response.text())
             .trim()
             .split("\n")
-            .map((line) => JSON.parse(line)); // Konwersja NDJSON na tablicę JSON
+            .map(JSON.parse);
 
-          if (games.length === 0) {
+          if (!games.length) {
             document.getElementById("games-container").innerHTML =
               "Brak dostępnych gier publicznych.";
             return;
@@ -67,50 +59,40 @@
 
           displayGames(games);
         } catch (error) {
-          console.error("Błąd:", error);
           document.getElementById(
             "games-container"
           ).innerHTML = `Wystąpił błąd: ${error.message}`;
         }
       }
 
-      // Funkcja do wyświetlania gier na stronie
       function displayGames(games) {
         const container = document.getElementById("games-container");
-        container.innerHTML = ""; // Wyczyść zawartość kontenera
+        container.innerHTML = "";
 
         games.forEach((game) => {
           const gameElement = document.createElement("div");
           gameElement.classList.add("game");
 
-          const gameInfo = `
-                    <div class="game-info">
-                        <strong>Gracz 1:</strong> ${
-                          game.players.white.user.id
-                        } <br>
-                        <strong>Gracz 2:</strong> ${
-                          game.players.black.user.id
-                        } <br>
-                        <strong>Wynik:</strong> ${
-                          game.winner ? game.winner : "Remis"
-                        } <br>
-                        <strong>Data:</strong> ${new Date(
-                          game.createdAt
-                        ).toLocaleString()}
-                    </div>
-                    <div class="game-board">
-                        <a href="https://lichess.org/${
-                          game.id
-                        }" target="_blank">Zobacz Grę</a>
-                    </div>
-                `;
+          gameElement.innerHTML = `
+            <div class="game-info">
+              <strong>Gracz 1:</strong> ${game.players.white.user.id} <br>
+              <strong>Gracz 2:</strong> ${game.players.black.user.id} <br>
+              <strong>Wynik:</strong> ${game.winner || "Remis"} <br>
+              <strong>Data:</strong> ${new Date(
+                game.createdAt
+              ).toLocaleString()}
+            </div>
+            <div class="game-board">
+              <a href="https://lichess.org/${
+                game.id
+              }" target="_blank">Zobacz Grę</a>
+            </div>
+          `;
 
-          gameElement.innerHTML = gameInfo;
           container.appendChild(gameElement);
         });
       }
 
-      // Wywołanie funkcji po załadowaniu strony
       window.onload = fetchMyPublicGames;
     </script>
   </body>
