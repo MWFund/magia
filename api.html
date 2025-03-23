@@ -37,47 +37,34 @@
     <script>
       // Funkcja do pobierania ostatnich publicznych gier z Twojego konta
       async function fetchMyPublicGames() {
-        const username = "Garuda1987"; // Zastąp 'your_username' swoją nazwą użytkownika Lichess
-        const url = `https://lichess.org/api/games/user/${username}?max=5`; // Pobierz ostatnie 5 gier
+        const username = "Garuda1987"; // Zastąp swoją nazwą użytkownika
+        const url = `https://lichess.org/api/games/user/${username}?max=5&clocks=false&evals=false&opening=false&moves=false&format=json`;
 
         try {
           const response = await fetch(url, {
             headers: {
-              Accept: "application/json", // Dodajemy nagłówek, aby otrzymać odpowiedź w formacie JSON
+              Accept: "application/x-ndjson",
             },
           });
 
-          // Sprawdzamy status odpowiedzi
           if (!response.ok) {
             throw new Error(`Błąd: ${response.statusText}`);
           }
 
-          // Sprawdzamy odpowiedź w postaci tekstowej przed próbą jej parsowania
-          let responseText = await response.text();
-          console.log("Odpowiedź z API (tekstowa):", responseText); // Logowanie odpowiedzi
+          const responseText = await response.text(); // Pobierz NDJSON jako tekst
+          console.log("Odpowiedź NDJSON:", responseText);
 
-          // Dodatkowe czyszczenie - usuwamy BOM oraz sprawdzamy obecność nieoczekiwanych znaków
-          responseText = responseText.replace(/^\uFEFF/, ""); // Usuwamy BOM (Byte Order Mark), jeśli występuje
-          responseText = responseText.trim(); // Usuwamy zbędne białe znaki z początku i końca
+          const games = responseText
+            .trim()
+            .split("\n")
+            .map((line) => JSON.parse(line)); // Konwersja NDJSON na tablicę JSON
 
-          // Jeżeli odpowiedź zawiera jakieś podejrzane znaki, spróbujmy je usunąć
-          // Wyszukujemy wszelkie znaki, które nie są częścią JSON (np. jeśli są niewidoczne)
-          if (/[^\x20-\x7E]/.test(responseText)) {
-            console.log("Podejrzane znaki wykryte w odpowiedzi.");
-            responseText = responseText.replace(/[^\x20-\x7E]/g, ""); // Usuwamy wszelkie niewidoczne znaki
-          }
-
-          // Próba przetworzenia odpowiedzi jako JSON
-          const games = JSON.parse(responseText);
-
-          // Sprawdzamy, czy są jakieś gry
           if (games.length === 0) {
             document.getElementById("games-container").innerHTML =
               "Brak dostępnych gier publicznych.";
             return;
           }
 
-          // Wyświetlamy gry na stronie
           displayGames(games);
         } catch (error) {
           console.error("Błąd:", error);
