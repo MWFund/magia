@@ -38,7 +38,7 @@
       // Funkcja do pobierania ostatnich publicznych gier z Twojego konta
       async function fetchMyPublicGames() {
         const username = "Garuda1987"; // Zastąp swoją nazwą użytkownika
-        const url = `https://lichess.org/api/games/user/${username}?max=5&clocks=false&evals=false&opening=false&moves=false&format=json`;
+        const url = `https://lichess.org/api/games/user/${username}?max=5`;
 
         try {
           const response = await fetch(url, {
