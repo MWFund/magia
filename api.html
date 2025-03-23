@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moje Ostatnie Gry Publiczne na Lichess</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f9;
+      }
+      h1 {
+        color: #333;
+      }
+      .game {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .game-info {
+        font-size: 16px;
+        margin: 5px 0;
+      }
+      .game-board {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Moje Ostatnie Gry Publiczne na Lichess</h1>
+    <div id="games-container">Ładowanie gier...</div>
+
+    <script>
+      // Funkcja do pobierania ostatnich publicznych gier z Twojego konta
+      async function fetchMyPublicGames() {
+        const username = "Garuda1987"; // Zastąp 'your_username' swoją nazwą użytkownika Lichess
+        const url = `https://lichess.org/api/games/user/${username}?max=5`; // Pobierz ostatnie 5 gier
+
+        try {
+          const response = await fetch(url, {
+            headers: {
+              Accept: "application/json", // Dodajemy nagłówek, aby otrzymać odpowiedź w formacie JSON
+            },
+          });
+
+          // Sprawdzamy status odpowiedzi
+          if (!response.ok) {
+            throw new Error(`Błąd: ${response.statusText}`);
+          }
+
+          // Sprawdzamy odpowiedź w postaci tekstowej przed próbą jej parsowania
+          let responseText = await response.text();
+          console.log("Odpowiedź z API (tekstowa):", responseText); // Logowanie odpowiedzi
+
+          // Dodatkowe czyszczenie - usuwamy BOM oraz sprawdzamy obecność nieoczekiwanych znaków
+          responseText = responseText.replace(/^\uFEFF/, ""); // Usuwamy BOM (Byte Order Mark), jeśli występuje
+          responseText = responseText.trim(); // Usuwamy zbędne białe znaki z początku i końca
+
+          // Jeżeli odpowiedź zawiera jakieś podejrzane znaki, spróbujmy je usunąć
+          // Wyszukujemy wszelkie znaki, które nie są częścią JSON (np. jeśli są niewidoczne)
+          if (/[^\x20-\x7E]/.test(responseText)) {
+            console.log("Podejrzane znaki wykryte w odpowiedzi.");
+            responseText = responseText.replace(/[^\x20-\x7E]/g, ""); // Usuwamy wszelkie niewidoczne znaki
+          }
+
+          // Próba przetworzenia odpowiedzi jako JSON
+          const games = JSON.parse(responseText);
+
+          // Sprawdzamy, czy są jakieś gry
+          if (games.length === 0) {
+            document.getElementById("games-container").innerHTML =
+              "Brak dostępnych gier publicznych.";
+            return;
+          }
+
+          // Wyświetlamy gry na stronie
+          displayGames(games);
+        } catch (error) {
+          console.error("Błąd:", error);
+          document.getElementById(
+            "games-container"
+          ).innerHTML = `Wystąpił błąd: ${error.message}`;
+        }
+      }
+
+      // Funkcja do wyświetlania gier na stronie
+      function displayGames(games) {
+        const container = document.getElementById("games-container");
+        container.innerHTML = ""; // Wyczyść zawartość kontenera
+
+        games.forEach((game) => {
+          const gameElement = document.createElement("div");
+          gameElement.classList.add("game");
+
+          const gameInfo = `
+                    <div class="game-info">
+                        <strong>Gracz 1:</strong> ${
+                          game.players.white.user.id
+                        } <br>
+                        <strong>Gracz 2:</strong> ${
+                          game.players.black.user.id
+                        } <br>
+                        <strong>Wynik:</strong> ${
+                          game.winner ? game.winner : "Remis"
+                        } <br>
+                        <strong>Data:</strong> ${new Date(
+                          game.createdAt
+                        ).toLocaleString()}
+                    </div>
+                    <div class="game-board">
+                        <a href="https://lichess.org/${
+                          game.id
+                        }" target="_blank">Zobacz Grę</a>
+                    </div>
+                `;
+
+          gameElement.innerHTML = gameInfo;
+          container.appendChild(gameElement);
+        });
+      }
+
+      // Wywołanie funkcji po załadowaniu strony
+      window.onload = fetchMyPublicGames;
+    </script>
+  </body>
+</html>
