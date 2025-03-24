@@ -106,6 +106,15 @@
        color: #ecec33; /* Zmiana koloru tekstu na niebieski */
        text-shadow: 0 0 10px rgb(239, 221, 22); /* Dodanie efektu świecenia */
        }
+       .hover-text {
+            display: none; /* Napis jest domyślnie ukryty */
+            color: #eaf4ea;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        a:hover + .hover-text {
+            display: inline; /* Napis staje się widoczny */
+        }
       .option {
         float: left;
         min-width: 50px;
@@ -361,17 +370,17 @@
         <a href="mapa.html"><h3>Mapa 🗺️</h3></a>
       </div>
       <div id="footer">
-        <h3>Podnoszenie poziomu broni </h3>
+        <h3><p>Podnoszenie poziomu broni </h3>
         
-          <div class="skill"><a href="https://lichess.org/training/Caro-Kann_Defense"
-            ><p> Obrona Caro-Kann  ↗️70/100</p></a></div>
-            <div class="skill"><a href="https://lichess.org/training/Italian_Game"
-              ><p> Partia Włoska  ↗️40/100</p></a></div>
-              <div class="skill"><a href="https://lichess.org/training/xRayAttack"
-                ><p> Mat Rentgenem ↗️80/100 </p></a></div>
-                <div class="skill"><a href="https://lichess.org/training/smotheredMate"
-                  ><p> Mat Beniowskiego ↗️↙80/100</p></a></div>
-   
+          <a href="https://lichess.org/training/Caro-Kann_Defense"
+            ><p> Obrona Caro-Kann  ↗️70/100</p></a><span class="hover-text">Podejmiesz wyzwanie?⚔️</span>
+          <a href="https://lichess.org/training/Italian_Game"
+              ><p> Partia Włoska  ↗️40/100</p></a><span class="hover-text">Jesteś odważny</span>
+             <a href="https://lichess.org/training/xRayAttack"
+                ><p> Mat Rentgenem ↗️80/100 </p></a><span class="hover-text">Podejmiesz wyzwanie?⚔️</span>
+                <a href="mat.html"
+                  ><p> Mat Beniowskiego ↗️↙80/100</p></a><span class="hover-text">Podejmiesz wyzwanie?⚔️</span>
+  
       </div>
       <div id="footer">
         <h3>Odznaki 🏅</h3>
