@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lichess API Integration</title>
+  </head>
+  <body>
+    <h1>Integracja z Lichess API</h1>
+    <button id="getAccountInfo">Pobierz informacje o koncie</button>
+
+    <div id="accountInfo"></div>
+
+    <script>
+      document
+        .getElementById("getAccountInfo")
+        .addEventListener("click", function () {
+          const token = "lip_a8mcUJNnTCeT0C0Tj5Da"; // Wstaw swój token API
+
+          fetch("https://lichess.org/api/account", {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("accountInfo").innerHTML = `
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            })
+            .catch((error) => {
+              console.error("Błąd:", error);
+            });
+        });
+    </script>
+  </body>
+</html>
