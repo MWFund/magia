@@ -32,7 +32,7 @@
         opacity: 0.9;
         margin-top: 20px;
         margin-bottom: 15px;
-        height: 150px;
+        height: 110px;
         width: 890px;
         margin-left: auto;
         margin-right: auto;
@@ -40,7 +40,8 @@
 
       #topbarL {
         float: left;
-        padding: 20px;
+
+        padding: 10px;
         width: 138px;
         opacity: 0.9;
         text-align: center;
@@ -49,7 +50,7 @@
 
       #topbarR {
         float: left;
-        padding: 20px;
+        padding: 10px;
         opacity: 0.9;
         width: 660px;
         font-size: 20px;
@@ -76,7 +77,8 @@
         color: #ffffff;
         text-align: justify;
       }
-      h3 {
+      h3,
+      h2 {
         color: #444444;
       }
 
@@ -166,7 +168,7 @@
 
       .carousel img {
         opacity: 0.9;
-        width: 55%;
+        width: 45%;
         margin-left: 20%;
         height: auto;
       }
@@ -197,6 +199,29 @@
       .tooltip:hover .tooltiptext {
         visibility: visible;
         opacity: 1;
+      }
+      .zmien1 {
+        float: left;
+      }
+      .zmien2 {
+        float: left;
+
+        padding: 20px;
+      }
+      button {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #f1f1f1;
+        border: 2px solid #f1f1f1;
+
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #1d1d1e;
+        color: #fff;
+
+        transform: scale(1.1);
       }
     </style>
   </head>
@@ -259,9 +284,12 @@
       </div>
 
       <div id="sidebar">
-        <h3>Bronie</h3>
-        <a href="karta3.html"><h5>Zmień</h5></a>
+        <div class="zmien1"><h2>Bronie</h2></div>
+        <div class="zmien2">
+          <a href="karta3.html"><button>Zmień</button></a>
+        </div>
 
+        <div style="clear: both"></div>
         <div class="skill">
           <p>Mat Beniowskiego🗡️🗡️🗡️</p>
         </div>
@@ -292,7 +320,7 @@
       </div>
 
       <div id="content">
-        <a href="karta3.html">Zmień postać</a>
+        <a href="karta3.html"><button>Zmień postać</button></a>
 
         <div class="carousel">
           <div class="carousel-images">
