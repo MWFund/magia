@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Szachista</title>
+
+    <style>
+      body {
+        background-image: url("images/muzeum.png");
+        background-size: cover;
+        background-position: center; /* Wyśrodkowanie tła */
+      }
+      #container {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+      }
+      #logo {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+      #nav {
+        float: left;
+        background-color: white;
+        width: 200px;
+
+        height: 300px;
+        padding: 10px;
+      }
+      #content {
+        float: left;
+        padding: 10px;
+        width: 760px;
+        height: 300px;
+        background-color: rgb(67, 67, 67);
+        color: aliceblue;
+        display: flex;
+        align-items: center;
+      }
+      .text {
+        margin-left: 20px;
+        flex: 1;
+      }
+      .image {
+        width: 20%;
+      }
+      a {
+        color: rgb(35, 36, 36);
+        text-decoration: none;
+      }
+      a:hover {
+        color: #ecec33;
+        text-shadow: 0 0 10px rgb(239, 221, 22);
+      }
+      .zmien3 {
+        float: right;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="zmien3">
+        <a href="wladca.html"><button>Wróć</button></a>
+      </div>
+      <div id="logo">
+        <!-- wstaw imie i nazwisko w sekcji logo-->
+        <h1>Anatolij Karpow</h1>
+      </div>
+
+      <div id="nav">
+        <h2>Najciekawsze partie</h2>
+        <!-- wstaw 5 linków z opisem w sekcji nav-->
+        <a
+          href="https://lichess.org/study/YSjFKJzd/V9kLDU42?utm_source=chatgpt.com"
+          target="_blank"
+          >Kasparow – Karpow, ⁢1985</a
+        >
+        <a
+          href="https://lichess.org/study/YSjFKJzd/V9kLDU42?utm_source=chatgpt.com"
+          target="_blank"
+          >Kasparow – Karpow, ⁢1985</a
+        >
+        <a
+          href="https://lichess.org/study/YSjFKJzd/V9kLDU42?utm_source=chatgpt.com"
+          target="_blank"
+          >Kasparow – Karpow, ⁢1985</a
+        >
+        <a
+          href="https://lichess.org/study/YSjFKJzd/V9kLDU42?utm_source=chatgpt.com"
+          target="_blank"
+          >Kasparow – Karpow, ⁢1985</a
+        >
+      </div>
+
+      <div id="content">
+        <!-- wygeneruj zdjęcie w sekcji content-->
+        <img src="images/Anatoly.jpg" class="image" />
+
+        <div class="text">
+          <!-- wstaw anegdote do 500 znaków, na końcu link do wikipedi w klasie text -->
+          Anatolij Karpow, mistrz świata w szachach od 1975 roku, zdobył tytuł
+          po tym, jak Bobby Fischer odmówił obrony. Karpow był znany z
+          wyjątkowej pozycyjnej gry i spokojnej postawy. Utrzymał tytuł przez 10
+          lat, broniąc go w meczach z Viktor Korchnoi i Garrym Kasparowem. Jego
+          styl uchodził za ostrożny, z naciskiem na solidność zamiast
+          spektakularnych ataków. Po zakończeniu kariery szachowej angażował się
+          w rosyjską politykę, pełniąc różne funkcje rządowe. Jego wpływ na
+          szachy i politykę jest niezatarte.
+          <a
+            href="https://pl.wikipedia.org/wiki/Anatolij_Karpow"
+            target="_blank"
+            >wikipedia</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
