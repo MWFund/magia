@@ -90,6 +90,12 @@
         bottom: 0;
         color: white;
       }
+      .carousel-queen img {
+        width: 80%; /* albo np. 25%, zależnie od tego jak bardzo chcesz zmniejszyć */
+      }
+      .carousel-prince img {
+        width: 70%; /* albo np. 25%, zależnie od tego jak bardzo chcesz zmniejszyć */
+      }
       .zmien3 {
         float: left;
       }
@@ -129,11 +135,18 @@
 
         <div class="slides">
           <div class="slide">
-            <a href="polgar.html"><img src="images/judi.png" /></a>
-            <div class="carousel-caption"><h1>Judit Polgár</h1></div>
+            <div class="carousel carousel-queen">
+              <a href="polgar.html"><img src="images/judi.png" /></a>
+              <div class="carousel-caption"><h1>Judit Polgár</h1></div>
+            </div>
           </div>
           <div class="slide"><img src="image5.jpg" alt="Obraz 5" /></div>
-          <div class="slide"><img src="images/polgar.png" alt="Obraz 6" /></div>
+
+          <div class="slide">
+            <div class="carousel carousel-queen">
+              <img src="images/polgar.png" alt="Obraz 6" />
+            </div>
+          </div>
         </div>
 
         <div class="controls">
@@ -151,13 +164,19 @@
 
         <div class="slides">
           <div class="slide">
-            <a href="aronian.html"
-              ><img src="images/ksiaze.png" alt="Obraz 4"
-            /></a>
-            <div class="carousel-caption"><h1>Jan Kowalski</h1></div>
+            <div class="carousel carousel-prince">
+              <a href="karta3.html"
+                ><img src="images/ksiaze.png" alt="Obraz 4"
+              /></a>
+              <div class="carousel-caption"><h1>Jan Kowalski</h1></div>
+            </div>
           </div>
           <div class="slide"><img src="image5.jpg" alt="Obraz 5" /></div>
-          <div class="slide"><img src="images/krol.png" alt="Obraz 6" /></div>
+          <div class="slide">
+            <div class="carousel carousel-prince">
+              <img src="images/krol.png" alt="Obraz 6" />
+            </div>
+          </div>
         </div>
 
         <div class="controls">
