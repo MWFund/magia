@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("images/mapa.png");
+        background-size: cover;
+      }
+
+      .tile {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(85, 85, 85, 0.8); /* Przezroczysty szary */
+        transition: background-color 0.3s ease, box-shadow 0.3s ease,
+          transform 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .tile:hover {
+        background-color: rgba(
+          255,
+          204,
+          0,
+          0.8
+        ); /* Zmieniamy kolor na żółty po najechaniu */
+        box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); /* Dodajemy świecący efekt */
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+      }
+
+      /* Pozycje kafelków */
+      .tile-1 {
+        top: 20%;
+        left: 80%;
+      }
+
+      .tile-2 {
+        top: 30%;
+        left: 50%;
+      }
+
+      .tile-3 {
+        top: 50%;
+        left: 30%;
+      }
+      a {
+        color: azure;
+        text-decoration: none;
+      }
+
+      .tile-4 {
+        top: 70%;
+        left: 80%;
+      }
+
+      .tile-5 {
+        top: 80%;
+        left: 20%;
+      }
+      .image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center; /* Wyrównanie napisu do środka */
+        margin: 1%;
+      }
+
+      /* Styl dla obrazka */
+      .top-left-image {
+        width: 200px; /* Szerokość obrazka */
+        height: auto; /* Wysokość dopasowana proporcjonalnie */
+      }
+
+      /* Styl dla napisu */
+      .image-caption {
+        font-size: 20px; /* Rozmiar czcionki napisu */
+        margin-top: 1%; /* Odstęp między obrazkiem a napisem */
+        color: #f4f0f0; /* Kolor tekstu */
+      }
+      .zmien3 {
+        float: left;
+       
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="image-container">
+      
+      <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
+      <div class="image-caption">Gandalf</div>
+      <div class="zmien3">
+        <a href="karta3.html"><button>Wróć</button></a>
+      </div>
+    </div>
+   
+   
+    <div class="tile tile-1">
+      <h2>🔒</h2></a>
+    </div>
+    <div class="tile tile-2"><h2>🔒</h2></div>
+    <div class="tile tile-3"><a href="jezioro.html"><h3>🔒Włoskie jezioro</h3></a></div>
+    <div class="tile tile-4"><a href="zamek.html"><h3>🔒Zamek Caro-Kann</h3></a></div>
+    <div class="tile tile-5"><h2>🔒</h2></div>
+    
+  </body>
+</html>
