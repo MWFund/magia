@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML to JSON Demo</title>
+  </head>
+  <body>
+    <div id="example">
+      <h1>Tytuł strony</h1>
+      <p class="description">To jest przykładowy opis.</p>
+      <ul>
+        <li>Pierwszy element</li>
+        <li>Drugi element</li>
+      </ul>
+      adlajlda
+    </div>
+
+    <button onclick="convertHtmlToJson()">Konwertuj HTML do JSON</button>
+
+    <pre
+      id="output"
+      style="background: #f0f0f0; padding: 1em; border: 1px solid #ccc"
+    ></pre>
+
+    <script>
+      function htmlToJson(element) {
+        const obj = {
+          tag: element.tagName.toLowerCase(),
+          attributes: {},
+          children: [],
+        };
+
+        for (let attr of element.attributes) {
+          obj.attributes[attr.name] = attr.value;
+        }
+
+        for (let child of element.childNodes) {
+          if (child.nodeType === Node.ELEMENT_NODE) {
+            obj.children.push(htmlToJson(child));
+          } else if (
+            child.nodeType === Node.TEXT_NODE &&
+            child.textContent.trim()
+          ) {
+            obj.children.push({
+              text: child.textContent.trim(),
+            });
+          }
+        }
+
+        return obj;
+      }
+
+      function convertHtmlToJson() {
+        const root = document.getElementById("example");
+        const jsonResult = htmlToJson(root);
+        document.getElementById("output").textContent = JSON.stringify(
+          jsonResult,
+          null,
+          2
+        );
+      }
+    </script>
+  </body>
+</html>
