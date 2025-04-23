@@ -6,17 +6,16 @@
     <title>Mapa</title>
     <style>
       body {
-          
-  background-image: url("images/jezioro.png");
-  background-size: cover;
-  background-position: center; /* Wyśrodkowanie tła */
+        background-image: url("images/jezioro.png");
+        background-size: cover;
+        background-position: center; /* Wyśrodkowanie tła */
       }
 
       .tile {
         position: absolute;
         width: 100px;
         height: 100px;
-       
+
         transition: background-color 0.3s ease, box-shadow 0.3s ease,
           transform 0.3s ease;
         border-radius: 8px;
@@ -32,12 +31,6 @@
         ); /* Zmieniamy kolor na żółty po najechaniu */
         box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); /* Dodajemy świecący efekt */
         transform: scale(1.1); /* Powiększamy kafelek o 10% */
-      }
-
-      /* Pozycje kafelków */
-      .tile-1 {
-        top: 20%;
-        left: 80%;
       }
 
       .tile-2 {
@@ -83,6 +76,33 @@
         margin-top: 1%; /* Odstęp między obrazkiem a napisem */
         color: #f4f0f0; /* Kolor tekstu */
       }
+      .tile1 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-image: url("images/duck.png");
+        transition: background-color 0.3s ease, box-shadow 0.3s ease,
+          transform 0.3s ease;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .tile1:hover {
+        background-color: rgba(
+          255,
+          204,
+          0,
+          0.8
+        ); /* Zmieniamy kolor na żółty po najechaniu */
+        box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); /* Dodajemy świecący efekt */
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+      }
+
+      /* Pozycje kafelków */
+      .tile1-1 {
+        top: 20%;
+        left: 70%;
+      }
     </style>
   </head>
   <body>
@@ -90,14 +110,26 @@
       <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
       <div class="image-caption">Gandalf</div>
     </div>
-    <div class="tile tile-1">
-      <h2>🔒</h2></a>
+    <div class="tile1 tile1-1"></div>
+    <div class="tile tile-2">
+      <a href="https://lichess.org/study/D0s4rxGY/M8PZbyPD"
+        ><h3>Kontratak Traxlera</h3></a
+      >
     </div>
-    <div class="tile tile-2"><a href="https://lichess.org/study/D0s4rxGY/M8PZbyPD"><h3>Kontratak Traxlera</h3></a></div>
-    <div class="tile tile-3"><a href="https://lichess.org/study/D0s4rxGY/DKYuTsoe"><h3> Klasyczny wariant</h3></a></div>
-    <div class="tile tile-4"><a href="https://lichess.org/study/D0s4rxGY/SuicxJaI"><h3>Smarzona Wątróbka</h3></a></div>
-    <div class="tile tile-5"><a href="https://lichess.org/study/N7FznfeZ/v298r0f9"><h3>Jerome'a gambit</h3></a></div>
-    
+    <div class="tile tile-3">
+      <a href="https://lichess.org/study/D0s4rxGY/DKYuTsoe"
+        ><h3>Klasyczny wariant</h3></a
+      >
+    </div>
+    <div class="tile tile-4">
+      <a href="https://lichess.org/study/D0s4rxGY/SuicxJaI"
+        ><h3>Smarzona Wątróbka</h3></a
+      >
+    </div>
+    <div class="tile tile-5">
+      <a href="https://lichess.org/study/N7FznfeZ/v298r0f9"
+        ><h3>Jerome'a gambit</h3></a
+      >
+    </div>
   </body>
-
 </html>
