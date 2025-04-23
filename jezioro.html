@@ -79,29 +79,18 @@
       .tile1 {
         position: absolute;
         width: 100px;
-        height: 100px;
-        background-image: url("images/duck.png");
+        height: 500px;
+        background-image: url("images/lampa2.png");
         transition: background-color 0.3s ease, box-shadow 0.3s ease,
           transform 0.3s ease;
-
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        top: 20%;
+        left: 20%;
       }
 
       .tile1:hover {
-        background-color: rgba(
-          255,
-          204,
-          0,
-          0.8
-        ); /* Zmieniamy kolor na żółty po najechaniu */
-        box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); /* Dodajemy świecący efekt */
-        transform: scale(1.1); /* Powiększamy kafelek o 10% */
-      }
+        background-image: url("images/lampa.png");
 
-      /* Pozycje kafelków */
-      .tile1-1 {
-        top: 20%;
-        left: 70%;
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
       }
     </style>
   </head>
@@ -110,11 +99,10 @@
       <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
       <div class="image-caption">Gandalf</div>
     </div>
-    <div class="tile1 tile1-1"></div>
+    <div class="tile1"></div>
     <div class="tile tile-2">
-      <a href="https://lichess.org/study/D0s4rxGY/M8PZbyPD"
-        ><h3>Kontratak Traxlera</h3></a
-      >
+      <img src="images/duck.png" width="100px" height="100px" />
+      <h3>Kontratak Traxlera</h3>
     </div>
     <div class="tile tile-3">
       <a href="https://lichess.org/study/D0s4rxGY/DKYuTsoe"
