@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gra praktyczna – Zagraj w szachy</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        padding: 20px;
+      }
+      header {
+        text-align: center;
+        background-color: #1e3a8a;
+        color: white;
+        padding: 30px 0;
+        border-radius: 10px;
+      }
+      #board {
+        width: 400px;
+        margin: 30px auto;
+      }
+      .controls {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .controls button {
+        background-color: #1e3a8a;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .controls button:hover {
+        background-color: #3b60d1;
+      }
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #666;
+      }
+      a {
+        color: #1e3a8a;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Gra praktyczna</h1>
+      <p>Sprawdź swoją wiedzę w praktyce – zagraj w szachy!</p>
+    </header>
+
+    <div id="board"></div>
+
+    <div class="controls">
+      <button onclick="startNewGame()">Nowa gra</button>
+    </div>
+
+    <section class="controls">
+      <p><a href="zajecia.html">← Wróć do strony głównej kursu</a></p>
+    </section>
+
+    <footer>
+      &copy; 2025 Kurs Szachowy dla Nauczycieli. Wszelkie prawa zastrzeżone.
+    </footer>
+  </body>
+</html>

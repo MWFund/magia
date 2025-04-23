@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Podstawy gry i ćwiczenia</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        padding: 20px;
+      }
+      header {
+        text-align: center;
+        background-color: #1e3a8a;
+        color: white;
+        padding: 30px 0;
+        border-radius: 10px;
+      }
+      section {
+        margin-top: 30px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #1e3a8a;
+      }
+      .quiz {
+        margin-top: 20px;
+      }
+      .quiz button {
+        margin-top: 10px;
+        padding: 8px 15px;
+        background-color: #1e3a8a;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .quiz button:hover {
+        background-color: #324fcf;
+      }
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #666;
+      }
+      a {
+        color: #1e3a8a;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Podstawy gry i ćwiczenia</h1>
+      <p>Powtórzenie wiedzy + proste zadania treningowe</p>
+    </header>
+
+    <section>
+      <h2>Najważniejsze zasady – przypomnienie</h2>
+      <ul>
+        <li>Każdy gracz ma 16 figur, zaczynając z dwóch pierwszych rzędów.</li>
+        <li>Figury poruszają się zgodnie z określonymi zasadami.</li>
+        <li>Nie można wykonywać ruchów, które wystawiają króla na szacha.</li>
+        <li>Celem gry jest danie przeciwnikowi mata.</li>
+        <li>Rozpoczynają białe – gracze wykonują ruchy na zmianę.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ćwiczenie 1: Co to za figura?</h2>
+      <p><strong>Pytanie:</strong> Jaka figura porusza się po skosach?</p>
+      <div class="quiz">
+        <button
+          onclick="alert('✅ Poprawnie! Goniec porusza się po przekątnych.')"
+        >
+          Goniec</button
+        ><br />
+        <button
+          onclick="alert('❌ Nieprawda. Wieża porusza się w linii prostej.')"
+        >
+          Wieża</button
+        ><br />
+        <button
+          onclick="alert('❌ Król może poruszyć się po skosie, ale tylko o jedno pole.')"
+        >
+          Król
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ćwiczenie 2: Czy to szach?</h2>
+      <p>
+        <strong>Pytanie:</strong> Król przeciwnika jest atakowany przez hetmana,
+        ale może się ruszyć na bezpieczne pole. Czy to mat?
+      </p>
+      <div class="quiz">
+        <button
+          onclick="alert('❌ Nie, to nie jest mat – król ma jeszcze ucieczkę.')"
+        >
+          Tak</button
+        ><br />
+        <button onclick="alert('✅ Poprawnie! To tylko szach, nie mat.')">
+          Nie
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ćwiczenie 3: Jak zakończyć grę remisem?</h2>
+      <p>Wybierz jedną z poprawnych sytuacji zakończenia gry remisem:</p>
+      <div class="quiz">
+        <button
+          onclick="alert('✅ Tak, powtórzenie pozycji to jedna z możliwości remisu.')"
+        >
+          Trzykrotne powtórzenie pozycji</button
+        ><br />
+        <button onclick="alert('❌ To nie kończy gry remisem.')">
+          Szach przeciwnikowi</button
+        ><br />
+        <button
+          onclick="alert('✅ Tak, brak możliwego ruchu i brak szacha to pat.')"
+        >
+          Pat
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dalsze ćwiczenia</h2>
+      <p>
+        Wkrótce pojawią się interaktywne maty w 1 ruchu oraz plansze do ćwiczeń.
+        Śledź aktualizacje!
+      </p>
+    </section>
+
+    <section class="controls">
+      <p><a href="zajecia.html">← Wróć do strony głównej kursu</a></p>
+    </section>
+
+    <footer>
+      &copy; 2025 Kurs Szachowy dla Nauczycieli. Wszelkie prawa zastrzeżone.
+    </footer>
+  </body>
+</html>
