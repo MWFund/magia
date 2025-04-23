@@ -19,17 +19,10 @@
         transition: background-color 0.3s ease, box-shadow 0.3s ease,
           transform 0.3s ease;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
 
       .tile:hover {
-        background-color: rgba(
-          255,
-          204,
-          0,
-          0.8
-        ); /* Zmieniamy kolor na żółty po najechaniu */
-        box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); /* Dodajemy świecący efekt */
+        box-shadow: 0 8px 16px rgba(38, 38, 38, 0.6); /* Dodajemy świecący efekt */
         transform: scale(1.1); /* Powiększamy kafelek o 10% */
       }
 
@@ -49,7 +42,7 @@
 
       .tile-4 {
         top: 70%;
-        left: 60%;
+        left: 75%;
       }
 
       .tile-5 {
@@ -68,6 +61,7 @@
       .top-left-image {
         width: 200px; /* Szerokość obrazka */
         height: auto; /* Wysokość dopasowana proporcjonalnie */
+        border-radius: 50%;
       }
 
       /* Styl dla napisu */
@@ -88,7 +82,7 @@
       }
 
       .tile1:hover {
-        background-image: url("images/lampa.png");
+        background-image: url("images/lampa1.png");
 
         transform: scale(1.1); /* Powiększamy kafelek o 10% */
       }
@@ -133,20 +127,18 @@
       </div>
     </div>
     <div class="tile tile-3">
-      <a href="https://lichess.org/study/D0s4rxGY/DKYuTsoe"
-        ><h3>Klasyczny wariant</h3></a
-      >
+      <a href="https://lichess.org/study/D0s4rxGY/DKYuTsoe"><h3></h3></a>
     </div>
     <div class="tile tile-4">
-      <a href="https://lichess.org/study/D0s4rxGY/SuicxJaI"
-        ><img src="images/smok.png" width="100px" height="100px" />
-        <h3>Smarzona Wątróbka</h3></a
-      >
+      <div class="tooltip">
+        <a href="https://lichess.org/study/D0s4rxGY/SuicxJaI"
+          ><img src="images/smok.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Smażona Wątróbka</h5></span></a
+        >
+      </div>
     </div>
     <div class="tile tile-5">
-      <a href="https://lichess.org/study/N7FznfeZ/v298r0f9"
-        ><h3>Jerome'a gambit</h3></a
-      >
+      <a href="https://lichess.org/study/N7FznfeZ/v298r0f9"><h3></h3></a>
     </div>
   </body>
 </html>
