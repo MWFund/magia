@@ -24,6 +24,19 @@
         padding: 5px;
         margin-bottom: 15px;
       }
+      #topbar1 {
+        background-color: #676969;
+        color: white;
+        padding: 10px;
+        opacity: 0.9;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        height: 130px;
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
 
       #topbar {
         background-color: #676969;
@@ -55,7 +68,25 @@
         width: 660px;
         font-size: 20px;
       }
-
+      #bar {
+        padding: 10px;
+        opacity: 0.9;
+        background-color: #676969;
+        height: 110px;
+        width: 900px;
+        margin-bottom: 15px;
+      }
+      #barL{
+        float: left;
+        width: 138px;
+      }
+      #barM{float: left;
+        width: 620px;
+      }
+      #barR{
+        float: left;
+        width: 138px;
+      }
       #sidebar {
         float: left;
         width: 250px; /* Zwiększona szerokość sidebar */
@@ -180,18 +211,21 @@
   </head>
 
   <div class="zmien3">
-    <a href="wybor.html"><button>Wróć</button></a>
+    <a href="index.html"><button>Wróć</button></a>
   </div>
     <div id="container">
 
-    <div id="topbar">
+    <div id="topbar1">
       <div id="topbarL">
-        <img src="images/jas2.png" width="100" height="100" />
+        <img src="images/jas2.png" width="100" height="100" /> Gandalf
       </div>
       <div id="topbarR">
-        <span class="bigtitle">Gandalf</span>
-        <div style="height: 30px"></div>
-
+        <span class="bigtitle">Odznaki 🏅</span>
+        
+        
+        <div style="height: 15px"></div>
+        ⚔️ Włoski atak 🎭 Łapanie oszustów 🎯 Pchnięcie środka 
+        <div style="height: 15px"></div>
         Kategoria IV |
 
         <div class="tooltip">
@@ -212,8 +246,23 @@
     
     </div>
 
-    <div id="topbar">
-      <div id="topbarL">
+    <div id="bar">
+      <div id="barL">
+        <div class="tooltip">
+          <a href="mapa.html"
+            ><img src="images/mapa2.png" width="100" height="100"
+          /></a>
+          <span class="tooltiptext"><h5>Pzejdź!</h5></span>
+        </div>
+      </div>
+      
+      <div id="barM">
+      <div class="tooltip">
+        <a href="karta3.html"><h3>Twoje misje</h3></a>
+        <span class="tooltiptext"><h5>Pzejdź!</h5></span>
+      </div></div>
+
+      <div id="barR">
         <div class="tooltip">
           <a href="kosmos.html"
             ><img src="images/kosmos.png" width="100" height="100"
@@ -221,13 +270,9 @@
           <span class="tooltiptext"><h5>Pzejdź!</h5></span>
         </div>
       </div>
-      
-      <div id="topbarR">
-        Odznaki 🏅
-        <div style="height: 30px"></div>
-        ⚔️ Włoski atak 🎭 Łapanie oszustów 🎯 Pchnięcie środka 
-      </div>
     </div>
+    <div style="clear:both"></div>
+
 
     <div id="sidebar">
       <div class="zmien1"><h2>Bronie</h2></div>
@@ -284,12 +329,7 @@
       
     </div>
 
-    <div id="footer">
-      <div class="tooltip">
-        <a href="karta3.html"><h3>Twoje misje</h3></a>
-        <span class="tooltiptext"><h5>Pzejdź!</h5></span>
-      </div>
-    </div>
+    
 
 </div>
   </body>
