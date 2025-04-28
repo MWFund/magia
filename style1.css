@@ -73,3 +73,22 @@ a:hover {
 .quiz button:hover {
   background-color: #324fcf;
 }
+#board {
+  width: 400px;
+  margin: 30px auto;
+}
+.controls {
+  text-align: center;
+  margin-top: 20px;
+}
+.controls button {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.controls button:hover {
+  background-color: #3b60d1;
+}
