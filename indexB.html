@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>School of chess magic</title>
+    <style>
+      body {
+        background-image: url("images/mag1.png");
+        background-size: cover;
+        background-position: center 30%;
+        background-attachment: fixed;
+        text-align: center;
+        margin: 0;
+        height: 100vh;
+        cursor: pointer;
+      }
+
+      .content {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: "Georgia", serif;
+        font-size: 3em;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+        margin: 0;
+        letter-spacing: 2px;
+        color: #f1f1f1;
+      }
+
+      button {
+        font-size: 20px;
+        padding: 15px 30px;
+        margin: 15px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #f1f1f1;
+        border: 2px solid #f1f1f1;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #1d1d1e;
+        color: #fff;
+        border-color: #eba627;
+        transform: scale(1.1);
+      }
+      .lang-switch {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lang-switch">
+      <a href="index.html"><button>PL</button></a>
+    </div>
+    <div class="content">
+      <h1>School of chess magic</h1>
+      <a href="karta5B.html"><button>Apprentice</button></a>
+      <a href="mag.html"><button>Wizard</button></a>
+      <a href="zajecia.html"><button>Teacher</button></a>
+    </div>
+  </body>
+</html>

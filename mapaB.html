@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kosmos</title>
+    <title>Map</title>
     <style>
       body {
         display: flex;
@@ -11,7 +11,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        background-image: url("images/kosmos.png");
+        background-image: url("images/mapa2.png");
         background-size: cover;
       }
 
@@ -19,20 +19,20 @@
         position: absolute;
         width: 100px;
         height: 100px;
-         /* Przezroczysty szary */
+       
         transition: background-color 0.3s ease, box-shadow 0.3s ease,
           transform 0.3s ease;
-        
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
 
       .tile:hover {
        
-       
-        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+        box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); 
+        transform: scale(1.1); 
       }
 
-      
-      /* Pozycje kafelków */
+    
       .tile-1 {
         top: 20%;
         left: 80%;
@@ -40,20 +40,27 @@
 
       .tile-2 {
         top: 30%;
-        left: 10%;
+        left: 50%;
       }
 
       .tile-3 {
-        
         top: 50%;
-        left: 20%;
+        left: 30%;
       }
       a {
         color: azure;
         text-decoration: none;
       }
 
-     
+      .tile-4 {
+        top: 70%;
+        left: 80%;
+      }
+
+      .tile-5 {
+        top: 80%;
+        left: 20%;
+      }
       .image-container {
         position: absolute;
         top: 0;
@@ -75,7 +82,7 @@
         margin-top: 1%; /* Odstęp między obrazkiem a napisem */
         color: #f4f0f0; /* Kolor tekstu */
       }
-      .zmien3 {
+      .change {
         float: left;
        
       }
@@ -87,8 +94,8 @@
       
       <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
       <div class="image-caption">Gandalf</div>
-      <div class="zmien3">
-        <a href="karta5.html"><button>Wróć</button></a>
+      <div class="change">
+        <a href="krainaB.html"><button>Back</button></a>
       </div>
     </div>
    
@@ -97,8 +104,9 @@
       <h2>🔒</h2></a>
     </div>
     <div class="tile tile-2"><h2>🔒</h2></div>
-    <div class="tile tile-3"><a href="kraina.html"><img src="images/kont1.png" width="250px" height="167px"></a></div>
-    
+    <div class="tile tile-3"><h3>🔒</h3></div>
+    <div class="tile tile-5"><a href="zamekB.html"><h1>⬇️</h1></a></div>
+    <div class="tile tile-4"><a href="jezioroB.html"><h1>⬇️</h1></a></div>
     
   </body>
 </html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      background-image: url("images/mag1.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #container {
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #menu {
+      background-color: #676969;
+      margin-top: 10px;
+      opacity: 0.9;
+      color: #ffffff;
+      padding: 5px;
+      margin-bottom: 15px;
+    }
+
+    #topbar1 {
+      background-color: #676969;
+      color: white;
+      padding: 10px;
+      opacity: 0.9;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      height: 130px;
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    #topbar {
+      background-color: #676969;
+      color: white;
+      padding: 10px;
+      opacity: 0.9;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      height: 110px;
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #topbarL {
+      float: left;
+      font-size: 20px;
+      padding: 10px;
+      width: 138px;
+      opacity: 0.9;
+      text-align: center;
+      border-right: 2px dotted #cccccc;
+    }
+
+    #topbarR {
+      float: left;
+      padding: 10px;
+      opacity: 0.9;
+      width: 660px;
+      font-size: 20px;
+    }
+    #bar {
+      padding: 10px;
+      opacity: 0.9;
+      background-color: #676969;
+      height: 110px;
+      width: 900px;
+      margin-bottom: 15px;
+    }
+    #barL{
+      float: left;
+      width: 138px;
+    }
+    #barM{float: left;
+      width: 623px;
+    }
+    #barR{
+      float: left;
+      width: 138px;
+    }
+    #sidebar {
+      float: left;
+      width: 250px; /* Zwiększona szerokość sidebar */
+
+      padding: 20px;
+      background-color: #676969;
+      text-align: left; /* Zmieniono na left, żeby lista była wyświetlana poprawnie */
+      font-size: 18px;
+      color: #ffffff;
+      opacity: 0.9;
+    }
+
+    #content {
+      float: left;
+      padding: 20px;
+      opacity: 0.8;
+      width: 400px;
+      background-color: #504e4e;
+      color: #ffffff;
+      text-align: justify;
+    }
+    .character {
+      display: flex;
+      justify-content: center; /* Centruje obraz poziomo */
+      align-items: center; /* Centruje obraz pionowo */
+      height: 400px; /* Wysokość kontenera (możesz zmienić według potrzeby) */
+    }
+
+    .character img {
+      width: 250px; /* Możesz zmienić rozmiar obrazu */
+      height: auto;
+    }
+
+    #sidebar2 {
+      float: left;
+      width: 130px; /* Zwiększona szerokość sidebar */
+
+      padding: 20px;
+      background-color: #676969;
+      text-align: left; /* Zmieniono na left, żeby lista była wyświetlana poprawnie */
+      font-size: 18px;
+      color: #ffffff;
+      opacity: 0.9;
+    }
+    .option {
+      border: 2px dotted white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    #footer {
+      clear: both;
+      background-color: #676969;
+      margin-bottom: 15px;
+      opacity: 0.9;
+      color: #ffffff;
+      padding: 10px;
+    }
+
+    a {
+      color: #f1f1f1; /* Kolor tekstu linku */
+      text-decoration: none; /* Usunięcie podkreślenia */
+      font-size: 20px;
+      transition: color 0.3s ease, text-shadow 0.3s ease; /* Płynne przejście zmian */
+    }
+    a:hover {
+      color: #ecec33; /* Zmiana koloru tekstu na niebieski */
+      text-shadow: 0 0 10px rgb(239, 221, 22); /* Dodanie efektu świecenia */
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 50px; /* Zmieniona szerokość dymka */
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 1px; /* Zwiększony padding (odstępy wewnętrzne dymka) */
+      position: absolute;
+      z-index: 1;
+      top: 25%; /* Ustawienie dymka poniżej tekstu */
+      left: 110%;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 10px; /* Zmieniony rozmiar tekstu w dymku */
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    .change1 {
+      float: left;
+    }
+    .change2 {
+      float: left;
+      padding: 20px;
+    }
+    .change3 {
+      float: right;
+    }
+    button {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #f1f1f1;
+      border: 2px solid #f1f1f1;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1d1d1e;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+  </style>
+</head>
+
+<div class="change3">
+  <a href="index.html"><button>Back</button></a>
+</div>
+  <div id="container">
+
+  <div id="topbar1">
+    <div id="topbarL">
+      <img src="images/jas2.png" width="100" height="100" /> Gandalf
+    </div>
+    <div id="topbarR">
+      <span class="bigtitle">Badges 🏅</span>
+
+
+      <div style="height: 15px"></div>
+      ⚔️ Italian Attack 🎭 Catching Cheaters 🎯 Center Push
+      <div style="height: 15px"></div>
+      Category IV |
+
+      <div class="tooltip">
+        <a href="ranking.html">Ranking 12/30🏆</a>
+        <span class="tooltiptext"><h5>Go!</h5></span>
+      </div>
+      |
+      <div class="tooltip">
+        <a href="https://lichess.org/login" target="_blank" >Lichess🔗</a>
+        <span class="tooltiptext"><h5>Go!</h5></span>
+      </div>
+      |
+      <div class="tooltip">
+        <a href="https://ratings.fide.com/profile/41848705" target="_blank">FIDE Ranking♟️</a>
+        <span class="tooltiptext"><h5>Go!</h5></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="bar">
+    <div id="barL">
+      <div class="tooltip">
+        <a href="mapa.html"
+          ><img src="images/mapa2.png" width="100" height="100"
+        /></a>
+        <span class="tooltiptext"><h5>Go!</h5></span>
+      </div>
+    </div>
+
+    <div id="barM">
+    <div class="tooltip">
+      <a href="karta3.html"><h3>Your Missions | </h3></a>
+      <span class="tooltiptext"><h5>Go!</h5></span>
+      <div style="clear:both"></div>
+    </div> <div class="tooltip">
+      <a href="awans.html"><h3>Promotion to Category III |</h3></a>
+      <span class="tooltiptext"><h5>Go!</h5></span>
+    </div>
+    <div class="tooltip">
+      <a href="awans2.html"><h3>Promotion to 13th</h3></a>
+      <span class="tooltiptext"><h5>Go!</h5></span>
+    </div></div>
+
+    <div id="barR">
+      <div class="tooltip">
+        <a href="kosmosB.html"
+          ><img src="images/kosmos.png" width="100" height="100"
+        /></a>
+        <span class="tooltiptext"><h5>Go!</h5></span>
+      </div>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+
+  <div id="sidebar">
+    <div class="change1"><h2>Weapons</h2></div>
+    <div class="change2">
+      <a href="karta3.html"><button>Change</button></a>
+    </div>
+
+    <div style="clear: both"></div>
+    <div class="skill">
+      <p>Beniowski's Mate🗡️🗡️🗡️</p>
+    </div>
+    <div class="skill">
+      <p>Italian Game🗡️🗡️🗡️</p>
+    </div>
+    <div class="skill">
+      <p>Caro-Kann Defense🗡️🗡️🗡️</p>
+    </div>
+
+    <div class="tooltip">
+      <a href="karta3.html"><h3>Skills</h3></a>
+      <span class="tooltiptext"><h5>Go!</h5></span>
+    </div>
+    <div class="skill">
+      <p>Final Blow</p>
+    </div>
+    <div class="skill">
+      <p>Tactics Master</p>
+    </div>
+    <div class="skill">
+      <p>Strategy Master</p>
+    </div>
+
+    <div class="skill">
+      <p>Position Assessment Master</p>
+    </div>
+  </div>
+
+  <div id="content">
+    <a href="karta3.html"><button>Costume</button></a>
+
+    <div class="character">
+      <img src="images/c.png" />
+    </div>
+  </div>
+
+  <div id="sidebar2">
+
+    <div class="option">Strength 5/10</div>
+    <div class="option">Dexterity 3/10</div>
+    <div class="option">Condition 2/10</div>
+    <div class="option">Charisma 1/10</div>
+    <div class="option">Wisdom 9/10</div>
+    <div class="option">Intelligence 2/10</div>
+
+  </div>
+
+
+</div>
+</body>
+</html>
