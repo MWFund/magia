@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa</title>
+    <style>
+      body {
+        background-image: url("images/jezioro.png");
+        background-size: cover;
+        background-position: center; /* Wyśrodkowanie tła */
+      }
+
+      .tile {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+
+        transition: background-color 0.3s ease, box-shadow 0.3s ease,
+          transform 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .tile:hover {
+        box-shadow: 0 8px 16px rgba(38, 38, 38, 0.6); /* Dodajemy świecący efekt */
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+      }
+
+      .tile-2 {
+        top: 30%;
+        left: 50%;
+      }
+
+      .tile-3 {
+        top: 50%;
+        left: 30%;
+      }
+      a {
+        color: azure;
+        text-decoration: none;
+      }
+
+      .tile-4 {
+        top: 70%;
+        left: 75%;
+      }
+
+      .tile-5 {
+        top: 80%;
+        left: 10%;
+      }
+      .image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center; /* Wyrównanie napisu do środka */
+        margin: 1%;
+      }
+
+      /* Styl dla obrazka */
+      .top-left-image {
+        width: 200px; /* Szerokość obrazka */
+        height: auto; /* Wysokość dopasowana proporcjonalnie */
+        border-radius: 50%;
+      }
+
+      /* Styl dla napisu */
+      .image-caption {
+        font-size: 20px; /* Rozmiar czcionki napisu */
+        margin-top: 1%; /* Odstęp między obrazkiem a napisem */
+        color: #f4f0f0; /* Kolor tekstu */
+      }
+      .tile1 {
+        position: absolute;
+        width: 100px;
+        height: 500px;
+        background-image: url("images/lampa2.png");
+        transition: background-color 0.3s ease, box-shadow 0.3s ease,
+          transform 0.3s ease;
+        top: 20%;
+        left: 20%;
+      }
+
+      .tile1:hover {
+        background-image: url("images/lampa1.png");
+
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+      }
+      .tooltip {
+        cursor: pointer;
+      }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 50px; /* Zmieniona szerokość dymka */
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 1px; /* Zwiększony padding (odstępy wewnętrzne dymka) */
+        position: absolute;
+        z-index: 1;
+        top: 25%; /* Ustawienie dymka poniżej tekstu */
+        left: 110%;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 10px; /* Zmieniony rozmiar tekstu w dymku */
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
+      <div class="image-caption">Gandalf</div>
+    </div>
+    <div class="tile1 tooltip">
+      <span class="tooltiptext"><h5>Kontratak Traxlera</h5></span>
+    </div>
+    <div class="tile tile-2">
+      <div class="tooltip">
+        <img src="images/duck.png" width="100px" height="100px" />
+        <span class="tooltiptext"><h5>Kontratak Traxlera</h5></span>
+      </div>
+    </div>
+    <div class="tile tile-3">
+      <a href="https://lichess.org/study/D0s4rxGY/DKYuTsoe"><h3></h3></a>
+    </div>
+    <div class="tile tile-4">
+      <div class="tooltip">
+        <a href="https://lichess.org/study/D0s4rxGY/SuicxJaI"
+          ><img src="images/smok.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Smażona Wątróbka</h5></span></a
+        >
+      </div>
+    </div>
+    <div class="tile tile-5">
+      <a href="https://lichess.org/study/N7FznfeZ/v298r0f9"><h3></h3></a>
+    </div>
+  </body>
+</html>

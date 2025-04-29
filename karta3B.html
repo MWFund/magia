@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background-image: url("images/mag1.png");
+  background-position: center; /* Wyśrodkowanie tła */
+  background-repeat: no-repeat; /* Zapobiega powtarzaniu tła */
+  background-size: cover; /* Dopasowuje tło do rozmiaru okna */
+  
+      }
+
+      #container {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #menu {
+        background-color: #676969;
+        margin-top: 10px;
+        opacity: 0.9;
+        color: #ffffff;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+
+      #topbar {
+        background-color: #676969;
+        color: white;
+        padding: 10px;
+        opacity: 0.9;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        height: 120px;
+        width: 890px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #topbarL {
+        float: left;
+        padding: 10px;
+        width: 138px;
+        opacity: 0.9;
+        text-align: center;
+        border-right: 2px dotted #cccccc;
+      }
+
+      #topbarR {
+        float: left;
+        padding: 10px;
+        opacity: 0.9;
+        width: 660px;
+        font-size: 20px;
+        
+      }
+
+      #sidebar {
+        float: left;
+        width: 250px; /* Zwiększona szerokość sidebar */
+        min-height: 620px;
+        padding: 20px;
+        background-color: #676969;
+        text-align: left; /* Zmieniono na left, żeby lista była wyświetlana poprawnie */
+        font-size: 18px;
+        color: #ffffff;
+        opacity: 0.9;
+        border-right: 2px dotted #666666;
+      }
+
+      #content {
+        float: left;
+        padding: 40px;
+        opacity: 0.8 ;
+        width: 527px;
+        background-color: #504e4e;
+        color: #ffffff;
+        
+        text-align: justify;
+      }
+      h3{
+        color: #444444;
+      }
+
+      #footer {
+        clear: both;
+        background-color: #676969;
+        margin-top: 15px;
+        opacity: 0.9;
+        color: #ffffff;
+        padding: 10px;
+      }
+	  #sidebar .skill:hover {
+      text-shadow: 0 0 10px rgb(239, 221, 22);
+      color: rgb(221, 205, 27); /* Zmienia kolor tekstu na biały podczas najechania */
+      }
+     a {
+       color: #f1f1f1; /* Kolor tekstu linku */
+       text-decoration: none; /* Usunięcie podkreślenia */
+       font-size: 20px;
+       transition: color 0.3s ease, text-shadow 0.3s ease; /* Płynne przejście zmian */
+       }
+      a:hover {
+       color: #ecec33; /* Zmiana koloru tekstu na niebieski */
+       text-shadow: 0 0 10px rgb(239, 221, 22); /* Dodanie efektu świecenia */
+       }
+       .hover-text {
+            display: none; /* Napis jest domyślnie ukryty */
+            color: #eaf4ea;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        a:hover + .hover-text {
+            display: inline; /* Napis staje się widoczny */
+        }
+      .option {
+        float: left;
+        min-width: 50px;
+        height: 25px;
+        font-size: 18px;
+        padding: 10px;
+        border-right: 2px dotted #444444;
+        opacity: 0.8;
+      }
+	  .option:hover {
+ 
+      text-shadow: 0 0 10px rgb(239, 221, 22);
+     color: rgb(239, 221, 22); /* Zmienia kolor tekstu na biały podczas najechania */
+	  }
+      /* Usunięcie podświetlenia z opcji */
+      .optionL {
+        font-size: 18px;
+        height: 25px;
+        padding: 10px;
+        border-bottom: 2px dotted #444444;
+      }
+
+      .bigtitle {
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: 2px;
+      }
+
+      .dottedline {
+        height: 5px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        border-bottom: 2px dotted #444444;
+      }
+
+      /* Nowy styl dla listy broni */
+      .weapon-category {
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      .weapon-list {
+        padding-left: 20px;
+      }
+
+      .weapon-item {
+        margin-bottom: 10px;
+      }
+      .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-image {
+      width: 100%;
+      flex: 0 0 100%;
+    }
+
+    .carousel img {
+      opacity: 0.9 ;
+      width: 65%;
+      margin-left: 20%;
+      height: auto;
+    }
+
+    /* Ukrycie przycisków radio */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Strzałki */
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .prev, .next {
+      
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Przemieszczanie slajdów */
+    #slide1:checked ~ .carousel-images {
+      transform: translateX(0);
+    }
+
+    #slide2:checked ~ .carousel-images {
+      transform: translateX(-100%);
+    }
+
+    #slide3:checked ~ .carousel-images {
+      transform: translateX(-200%);
+    }
+
+    /* Stylowanie przycisków strzałek */
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+    .zmien3 {
+        float: right;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="zmien3">
+      <a href="karta5B.html"><button>Wróć</button></a>
+    </div>
+
+      <div id="topbar">
+        <div id="topbarL">
+          <img src="images/jas2.png" width="100" height="100" />
+        </div>
+        <div id="topbarR">
+          <span class="bigtitle">Gandalf</span>
+          <div style="height: 30px"></div>
+          
+            Kategoria IV |
+            <a href="rankingB.html">Ranking 12/30🏆 </a> |
+            <a href="https://lichess.org/login" target="_blank">Lichess🔗</a> |
+            <a href="https://ratings.fide.com/profile/41848705"
+            target="_blank" >Ranking FIDE♟️</a>
+        
+        </div>
+        <div style="clear: both"></div>
+      </div>
+
+      <div id="topbar">
+        <div id="topbarL">
+          <a href="kosmosB.html"
+            ><img src="images/kosmos.png" width="100" height="100"
+          /></a>
+        </div>
+        <div id="topbarR">
+         Odznaki 🏅
+          <div style="height: 30px"></div>
+          ⚔️ Włoski atak 🎭 Łapanie oszustów 🎯 Pchnięcie środka
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <div id="container">
+        <div id="menu">
+          <div class="option">💎</div>
+          <div class="option">Siła 5/10</div>
+          <div class="option">Zręczność 3/10</div>
+          <div class="option">Kondycja 2/10</div>
+          <div class="option">Charyzma 1/10</div>
+          <div class="option">Mądrość 9/10</div>
+          <div class="option">Inteligencja 2/10</div>
+          <div style="clear: both"></div>
+        </div>
+
+      <div id="sidebar">
+        <h3>Bronie 🏹</h3>
+        <div class="skill"><a href="https://lichess.org/training/smotheredMate"
+          target="_blank"><p>Mat Beniowskiego🗡️🗡️🗡️</p></a></div>
+        
+			<div class="skill"><a href="https://lichess.org/training/xRayAttack"
+        target="_blank" ><p>Mat rentgenem🗡️</p></a></div>
+				<div class="skill"><a href="https://lichess.org/training/Italian_Game"
+          target="_blank"><p>Partia Włoska🗡️🗡️🗡️</p></a></div>
+					<div class="skill"><a href="https://lichess.org/training/Caro-Kann_Defense"
+            target="_blank"  ><p>Obrona Caro-Kann🗡️🗡️🗡️</p></a></div>
+
+           
+        
+        <h3>Umiejętności 📉</h3>
+        <div class="skill">
+        <a href="matB.html"
+        ><p> Ostateczny cios</p></a>
+      </div>
+        <div class="skill">
+          <a href="mistrzfigurB.html"
+            ><p>Mistrz figur</p></a
+          >
+        </div>
+        <div class="skill">
+          <p>Mistrz taktyki</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz strategii</p>
+        </div>
+
+        <div class="skill">
+          <p>Mistrz ocena pozycji</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz wyceny figur</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz liczenia kombinacji</p>
+        </div>
+        <div class="skill">
+          <p>Mistrz otwarć</p>
+        </div>
+        <h3>Dodaj nową umiejętność:</h3>
+        <form id="skill-form">
+          <select id="new-skill">
+            <option value="Mistrz końcówek">Mistrz końcówek</option>
+            <option
+              value="Mistrz przewidywania
+            widzenie zagrożeń
+            "
+            >
+              Mistrz przewidywania, widzenie zagrożeń
+            </option>
+            <option value="Mistrz obrony">Mistrz motywów</option>
+            <option value="Mistrz ataku">Mistrz systematyczności</option>
+            <option value="Mistrz gry pozycyjnej">Mistrz emocji</option>
+            <option value=" Mistrz wytrzymywania presji">
+              Mistrz wytrzymywania presji
+            </option>
+          </select>
+          <button type="submit">Dodaj</button>
+        </form>
+      </section>
+
+      </div>
+
+      <div id="content">
+        <span class="bigtitle">Postacie</span>
+        <div class="dottedline"></div>
+        <div class="carousel">
+          <!-- Radio buttons do zmiany slajdów -->
+          <input type="radio" id="slide1" name="carousel" checked>
+          <input type="radio" id="slide2" name="carousel">
+          <input type="radio" id="slide3" name="carousel">
+        
+          <div class="carousel-images">
+            <div class="carousel-image">
+              <img src="images/c.png" alt="Zdjęcie 1">
+            </div>
+            <div class="carousel-image">
+              <img src="images/b.png" alt="Zdjęcie 2">
+            </div>
+            <div class="carousel-image">
+              <img src="https://via.placeholder.com/600x300?text=Zdjęcie+3" alt="Zdjęcie 3">
+            </div>
+          </div>
+        
+          <!-- Strzałki do nawigacji -->
+          <div class="carousel-controls">
+            <label for="slide1" class="prev">❮</label>
+            <label for="slide2" class="next">❯</label>
+            
+            
+          </div>
+        </div>
+        
+      </div>
+
+      <div id="footer">
+        <h3><p>Podnoszenie poziomu broni </h3>
+        
+          <a href="https://lichess.org/training/Caro-Kann_Defense"
+          target="_blank"><p> Obrona Caro-Kann  ↗️70/100</p></a>
+          <a href="https://lichess.org/training/Italian_Game"
+          target="_blank"><p> Partia Włoska  ↗️40/100</p></a>
+             <a href="https://lichess.org/training/xRayAttack"
+             target="_blank"><p> Mat Rentgenem ↗️80/100 </p></a>
+                <a href="https://lichess.org/training/smotheredMate"
+                target="_blank" ><p> Mat Beniowskiego ↗️↙80/100</p></a>
+      </div>
+      <div id="footer">
+        <a href="rankingB.html"><h3>Wyzwanie na pojedynek ⚔️</h3></a>
+      </div>
+      
+      
+      
+    </div>
+  </body>
+</html>
