@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gra praktyczna – Zagraj w szachy</title>
+    <link rel="stylesheet" href="style1.css" />
+    <!-- Chessboard.js CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Gra praktyczna</h1>
+      <p>Sprawdź swoją wiedzę w praktyce – zagraj w szachy!</p>
+    </header>
+
+    <div id="board"></div>
+
+    <div class="controls">
+      <button onclick="startNewGame()">Nowa gra</button>
+    </div>
+
+    <section class="controls">
+      <p><a href="zajecia.html">← Wróć do strony głównej kursu</a></p>
+    </section>
+
+    <footer>
+      &copy; 2025 Kurs Szachowy dla Nauczycieli. Wszelkie prawa zastrzeżone.
+    </footer>
+
+    <!-- Chess.js + Chessboard.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script>
+      const game = new Chess();
+      const board = Chessboard("board", {
+        draggable: true,
+        position: "start",
+        onDrop: function (source, target) {
+          const move = game.move({
+            from: source,
+            to: target,
+            promotion: "q",
+          });
+
+          if (move === null) return "snapback";
+        },
+        onSnapEnd: function () {
+          board.position(game.fen());
+        },
+      });
+
+      function startNewGame() {
+        game.reset();
+        board.start();
+      }
+    </script>
+  </body>
+</html>
