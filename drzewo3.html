@@ -6,9 +6,10 @@
     <title>Mapa</title>
     <style>
       body {
-        background-image: url("images/jezioro.png");
+        background-image: url("images/tree.png");
         background-size: cover;
-        background-position: center; /* Wyśrodkowanie tła */
+
+        background-attachment: fixed;
       }
 
       .tile {
@@ -27,13 +28,13 @@
       }
 
       .tile-2 {
-        top: 30%;
+        top: 10%;
         left: 50%;
       }
 
       .tile-3 {
         top: 50%;
-        left: 30%;
+        left: 20%;
       }
       a {
         color: azure;
@@ -42,12 +43,29 @@
 
       .tile-4 {
         top: 70%;
-        left: 75%;
+        left: 70%;
       }
 
       .tile-5 {
         top: 80%;
-        left: 10%;
+        left: 40%;
+      }
+
+      .tile-6 {
+        top: 50%;
+        left: 30%;
+      }
+      .tile-7 {
+        top: 80%;
+        left: 55%;
+      }
+      .tile-8 {
+        top: 30%;
+        left: 60%;
+      }
+      .tile-9 {
+        top: 10%;
+        left: 60%;
       }
       .image-container {
         position: absolute;
@@ -91,7 +109,7 @@
       }
       .tooltip .tooltiptext {
         visibility: hidden;
-        width: 50px; /* Zmieniona szerokość dymka */
+        width: 100%; /* Zmieniona szerokość dymka */
         background-color: rgba(0, 0, 0, 0.7);
         color: #fff;
         text-align: center;
@@ -103,12 +121,15 @@
         left: 110%;
         opacity: 0;
         transition: opacity 0.3s;
-        font-size: 10px; /* Zmieniony rozmiar tekstu w dymku */
+        font-size: 100%; /* Zmieniony rozmiar tekstu w dymku */
       }
 
       .tooltip:hover .tooltiptext {
         visibility: visible;
         opacity: 1;
+      }
+      .zmien3 {
+        float: right;
       }
     </style>
   </head>
@@ -117,41 +138,31 @@
       <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
       <div class="image-caption">Gandalf</div>
     </div>
-    <div class="tile1 tooltip">
-      <span class="tooltiptext"><h5>Gambit Evansa</h5></span>
+    <div class="zmien3">
+      <a href="jezioro.html"><button>Wróć</button></a>
     </div>
+
     <div class="tile tile-2">
       <div class="tooltip">
-        <a href="drzewo1.html">
-          <img src="images/duck.png" width="100px" height="100px" />
-          <span class="tooltiptext"><h5>Giuoco Piano</h5></span></a
+        <a href="drzewo2.html">
+          <img src="images/sowa.png" width="100px" height="150px" />
+          <span class="tooltiptext"><h5>5.0-0</h5></span></a
         >
       </div>
     </div>
-
     <div class="tile tile-3">
       <div class="tooltip">
-        <a href="https://lichess.org/study/D0s4rxGY/SuicxJaI"
-          ><img src="images/ogr.png" width="100px" height="100px" />
-          <span class="tooltiptext"><h5>Atak Maxa Lange</h5></span></a
+        <a href="hi.html"
+          ><img src="images/ptak1.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>5.e5</h5></span></a
         >
       </div>
     </div>
     <div class="tile tile-4">
       <div class="tooltip">
-        <a href="drzewo3.html"
-          ><img src="images/smok.png" width="100px" height="100px" />
-          <span class="tooltiptext"><h5>Obrona dwóch skoczków</h5></span></a
-        >
-      </div>
-    </div>
-    <div class="tile tile-5">
-      <div class="tooltip">
         <a href="https://lichess.org/study/D0s4rxGY/SuicxJaI"
-          ><img src="images/duck.png" width="100px" height="100px" />
-          <span class="tooltiptext"
-            ><h5>Hungarian Defence Giuoco Pianissimo</h5></span
-          ></a
+          ><img src="images/ptak4.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Atak smażonej wątróbki</h5></span></a
         >
       </div>
     </div>
