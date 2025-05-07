@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa</title>
+    <style>
+      body {
+        background-size: cover;
+
+        background-image: url("images/drogi.jpg");
+      }
+
+      .tile {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+
+        transition: background-color 0.3s ease, box-shadow 0.3s ease,
+          transform 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .tile:hover {
+        box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); /* Dodajemy świecący efekt */
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+      }
+
+      /* Pozycje kafelków */
+      .tile-1 {
+        top: 20%;
+        left: 80%;
+      }
+
+      .tile-2 {
+        top: 30%;
+        left: 20%;
+      }
+
+      .tile-3 {
+        top: 50%;
+        left: 30%;
+      }
+      a {
+        color: azure;
+        text-decoration: none;
+      }
+
+      .tile-4 {
+        top: 70%;
+        left: 80%;
+      }
+
+      .tile-5 {
+        top: 80%;
+        left: 20%;
+      }
+      .tile-6 {
+        top: 20%;
+        left: 50%;
+      }
+
+      .tile-7 {
+        top: 30%;
+        left: 70%;
+      }
+
+      .tile-8 {
+        top: 50%;
+        left: 10%;
+      }
+      a {
+        color: azure;
+        text-decoration: none;
+      }
+
+      .tile-9 {
+        top: 70%;
+        left: 60%;
+      }
+
+      .tile-10 {
+        top: 80%;
+        left: 40%;
+      }
+      .tile-11 {
+        top: 90%;
+        left: 45%;
+      }
+      .tile-12 {
+        top: 30%;
+        left: 40%;
+      }
+      .tile-13 {
+        top: 10%;
+        left: 40%;
+      }
+      .tile-14 {
+        top: 50%;
+        left: 40%;
+      }
+      .image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center; /* Wyrównanie napisu do środka */
+        margin: 1%;
+      }
+
+      /* Styl dla obrazka */
+      .top-left-image {
+        width: 200px; /* Szerokość obrazka */
+        height: auto; /* Wysokość dopasowana proporcjonalnie */
+        border-radius: 50%;
+      }
+
+      /* Styl dla napisu */
+      .image-caption {
+        font-size: 20px; /* Rozmiar czcionki napisu */
+        margin-top: 1%; /* Odstęp między obrazkiem a napisem */
+        color: #f4f0f0; /* Kolor tekstu */
+      }
+      .zmien3 {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
+      <div class="image-caption">Gandalf</div>
+    </div>
+    <div class="zmien3">
+      <a href="goblin.html"><button>Wróć</button></a>
+    </div>
+
+    <div class="tile tile-1">
+      <a href="drzewo2.html"><h1>5.d3</h1></a>
+    </div>
+    <div class="tile tile-2">
+      <a href="drzewo2.html"><h1>5.d4</h1></a>
+    </div>
+    <div class="tile tile-3">
+      <a href="drzewo2.html"><h1>5.d4 exd4</h1></a>
+    </div>
+    <div class="tile tile-4">
+      <a href="drzewo2.html"><h1>6.cxd4</h1></a>
+    </div>
+    <div class="tile tile-5">
+      <a href="drzewo2.html"><h1>7.Gd2 Gxd2</h1></a>
+    </div>
+    <div class="tile tile-6">
+      <a href="drzewo2.html"><h1>7.Gd2 Sxe4</h1></a>
+    </div>
+    <div class="tile tile-7">
+      <a href="drzewo2.html"><h1>6.e5</h1></a>
+    </div>
+    <div class="tile tile-8">
+      <a href="drzewo2.html"><h4>Hungarian Defence</h4></a>
+    </div>
+
+    <div class="tile tile-9">
+      <a href="drzewo2.html"><h1>5.e5</h1></a>
+    </div>
+    <div class="tile tile-10">
+      <a href="drzewo2.html"><h4>Gambit Evansa</h4></a>
+    </div>
+    <div class="tile tile-14">
+      <a href="drzewo2.html"><h4>Atak Maxa Lange</h4></a>
+    </div>
+    <div class="tile tile-11">
+      <a href="drzewo2.html"><h4>Hungarian Defence Giuoco Pianissimo</h4></a>
+    </div>
+    <div class="tile tile-12">
+      <a href="drzewo2.html"><h4>Atak smażonej wątróbki</h4></a>
+    </div>
+    <div class="tile tile-13">
+      <a href="drzewo2.html"><h4>5.0-0</h4></a>
+    </div>
+  </body>
+</html>
