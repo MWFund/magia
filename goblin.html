@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goblin</title>
+    <style>
+      body {
+        background-image: url("images/goblin.jpg");
+        background-size: cover;
+        background-position: center 20%;
+        margin: 0;
+        overflow: hidden; /* Zapobiega pojawianiu się pasków przewijania */
+      }
+      .polowa {
+        position: absolute;
+        top: 0;
+        height: 100vh; /* Pełna wysokość okna */
+        width: 50vw; /* Połowa szerokości okna */
+        cursor: pointer; /* Zmiana kursora na wskazujący */
+      }
+      .lewa {
+        left: 0;
+        background-color: rgba(
+          255,
+          0,
+          0,
+          0.01
+        ); /* Prawie przezroczyste tło dla debugowania */
+      }
+      .prawa {
+        right: 0;
+        background-color: rgba(
+          0,
+          0,
+          255,
+          0.01
+        ); /* Prawie przezroczyste tło dla debugowania */
+      }
+      .zmien3 {
+        position: absolute; /* Zmieniamy na absolute, aby móc kontrolować z-index */
+        top: 20px; /* Przykładowe umiejscowienie od góry */
+        right: 20px; /* Przykładowe umiejscowienie od prawej */
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="zmien3">
+      <a href="jezioro.html"><button>Wróć</button></a>
+    </div>
+
+    <div class="polowa lewa" onclick="window.location.href='mapa2.html';"></div>
+    <div class="polowa prawa"></div>
+  </body>
+</html>
