@@ -2,58 +2,54 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kosmos</title>
     <style>
-     
       body {
         background-image: url("images/kosmos.jpeg");
         background-size: cover;
       }
-    
 
       .tile {
         position: absolute;
         width: 5%;
         height: 5%;
-         /* Przezroczysty szary */
+        /* Przezroczysty szary */
         transition: background-color 0.3s ease, box-shadow 0.3s ease,
           transform 0.3s ease;
-          text-align: center;
+        text-align: center;
       }
       .tile:hover {
         transform: scale(1.1); /* Powiększamy kafelek o 10% */
       }
       /* Pozycje kafelków */
       .tile-1 {
-        top: 20%;
-        left: 80%;
-      }
-
-      .tile-2 {
-        top: 30%;
-        left: 10%;
-      }
-
-      .tile-3 {
-        
-        top: 50%;
-        left: 20%;
-      }
-      .tile-4 {
-        top: 40%;
+        top: 70%;
         left: 60%;
       }
 
-      .tile-5 {
+      .tile-2 {
+        top: 90%;
+        left: 50%;
+      }
+
+      .tile-3 {
         top: 70%;
-        left: 10%;
+        left: 30%;
+      }
+      .tile-4 {
+        top: 40%;
+        left: 20%;
+      }
+
+      .tile-5 {
+        top: 20%;
+        left: 50%;
       }
 
       .tile-6 {
-        
-        top: 50%;
-        left: 50%;
+        top: 20%;
+        left: 80%;
       }
       a {
         color: azure;
@@ -61,7 +57,7 @@
       }
       /* Styl dla obrazka */
       .top-left-image {
-        width:10%; /* Szerokość obrazka */
+        width: 10%; /* Szerokość obrazka */
         height: auto; /* Wysokość dopasowana proporcjonalnie */
         border-radius: 50%;
       }
@@ -72,12 +68,36 @@
         margin-top: 1%; /* Odstęp między obrazkiem a napisem */
         color: #f4f0f0; /* Kolor tekstu */
       }
+
+      .tooltip {
+        cursor: pointer;
+      }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 50px; /* Zmieniona szerokość dymka */
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 1px; /* Zwiększony padding (odstępy wewnętrzne dymka) */
+        position: absolute;
+        z-index: 1;
+        top: 25%; /* Ustawienie dymka poniżej tekstu */
+        left: 110%;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 10px; /* Zmieniony rozmiar tekstu w dymku */
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
       .zmien3 {
         float: right;
-       
       }
-      @media (max-width: 1200px) {
 
+      @media (max-width: 1200px) {
         body {
           background-size: 1200px 900px;
         }
@@ -88,50 +108,81 @@
           background-size: 768px 1365px;
         }
         .tile-6 {
-        
-        top: 60%;
-        left: 50%;
-      }
+          top: 20%;
+          left: 80%;
+        }
       }
       @media (max-width: 320px) {
         body {
           background-size: 320px 568px;
         }
         .tile-6 {
-        
-        top: 60%;
-        left: 50%;
-      }
-      .tile-1 {
-        top: 20%;
-        left: 60%;
-      }
+          top: 20%;
+          left: 80%;
+        }
+        .tile-1 {
+          top: 20%;
+          left: 60%;
+        }
       }
     </style>
   </head>
-  <body>  <div class="zmien3">
-    <a href="karta5.html"><button>Wróć</button></a>
-  </div>
-    
-    <div >
-      
+  <body>
+    <div class="zmien3">
+      <a href="karta5.html"><button>Wróć</button></a>
+    </div>
+
+    <div>
       <img src="images/jas2.jpeg" class="top-left-image" />
-    
-      
     </div>
-  
-   
+
     <div class="tile tile-1">
-      <a href="kraina.html"><img src="images/kosmos1.png" width="100px" >Discipulus </a>
+      <div class="tooltip">
+        <a href="drzewo1.html">
+          <img src="images/4.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Novitius</h5></span></a
+        >
+      </div>
     </div>
-    <div class="tile tile-2"><a href="kraina.html"><img src="images/kosmos1.png" width="100px" >Novitius</a></div>
-    <div class="tile tile-3"><a href="kraina.html"><img src="images/kont1.png" width="130px" height="80px">Magister </a></div>
+    <div class="tile tile-2">
+      <div class="tooltip">
+        <a href="drzewo1.html">
+          <img src="images/6.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Initiatuss</h5></span></a
+        >
+      </div>
+    </div>
+    <div class="tile tile-3">
+      <div class="tooltip">
+        <a href="kraina.html">
+          <img src="images/1.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Discipulus</h5></span></a
+        >
+      </div>
+    </div>
     <div class="tile tile-4">
-      <a href="kraina.html"><img src="images/kosmos1.png" width="100px" >Peritus  </a></a>
+      <div class="tooltip">
+        <a href="drzewo1.html">
+          <img src="images/2.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Peritus</h5></span></a
+        >
+      </div>
     </div>
-    <div class="tile tile-5"><a href="kraina.html"><img src="images/kosmos3.png" width="100px" >Expertus </a></div>
-    <div class="tile tile-6"><a href="kraina.html"><img src="images/kosmos3.png" width="130px" >Initiatus  </a></div>
-    
-    
+    <div class="tile tile-5">
+      <div class="tooltip">
+        <a href="drzewo1.html">
+          <img src="images/3.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Expertus</h5></span></a
+        >
+      </div>
+    </div>
+    <div class="tile tile-6">
+      <div class="tooltip">
+        <a href="drzewo1.html">
+          <img src="images/5.png" width="100px" height="100px" />
+          <span class="tooltiptext"><h5>Magister</h5></span></a
+        >
+      </div>
+    </div>
   </body>
 </html>
