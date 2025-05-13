@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>mapa3</title>
+    <style>
+      body {
+        background-size: cover;
+        background-image: url("images/goblin2.png");
+        margin: 0;
+        height: 100vh;
+        background-color: #f0f0f0;
+        position: relative;
+        font-family: Arial, sans-serif;
+      }
+
+      .kafelek {
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        position: absolute;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .kafelek .tekst {
+        display: none;
+        color: white;
+        text-align: center;
+        padding-top: 60px;
+        font-size: 18px;
+      }
+
+      .kafelek:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .kafelek:hover .tekst {
+        display: block;
+      }
+
+      /* Rozmieszczenie kafelków */
+      #kafelek1 {
+        top: 10%;
+        left: 15%;
+      }
+      #kafelek2 {
+        top: 30%;
+        right: 20%;
+      }
+      #kafelek3 {
+        bottom: 25%;
+        left: 25%;
+      }
+      #kafelek4 {
+        bottom: 15%;
+        right: 15%;
+      }
+      #kafelek5 {
+        top: 30%;
+        left: 75%;
+      }
+      #kafelek6 {
+        top: 50%;
+        right: 20%;
+      }
+      #kafelek7 {
+        bottom: 25%;
+        left: 45%;
+      }
+      #kafelek8 {
+        bottom: 75%;
+        right: 15%;
+      }
+      #kafelek9 {
+        bottom: 15%;
+        right: 65%;
+      }
+      #kafelek10 {
+        top: 30%;
+        left: 55%;
+      }
+      #kafelek11 {
+        top: 60%;
+        right: 20%;
+      }
+      #kafelek12 {
+        bottom: 75%;
+        left: 55%;
+      }
+      #kafelek13 {
+        bottom: 45%;
+        right: 55%;
+      }
+      .zmien3 {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="zmien3">
+      <a href="jezioro.html"><button>Wróć</button></a>
+    </div>
+    <a href="strona1.html" id="kafelek1" class="kafelek">
+      <div class="tekst">5.d3</div>
+    </a>
+
+    <a href="strona2.html" id="kafelek2" class="kafelek">
+      <div class="tekst">5.d4</div>
+    </a>
+
+    <a href="https://example.com" id="kafelek3" class="kafelek" target="_blank">
+      <div class="tekst">7.Sc3 Sxe4</div>
+    </a>
+
+    <a href="#sekcja" id="kafelek4" class="kafelek">
+      <div class="tekst">7.Gd2 Gxd2</div>
+    </a>
+    <a href="strona1.html" id="kafelek5" class="kafelek">
+      <div class="tekst">7.Gd2 Sxe4</div>
+    </a>
+
+    <a href="strona2.html" id="kafelek6" class="kafelek">
+      <div class="tekst">6.e5</div>
+    </a>
+
+    <a href="https://example.com" id="kafelek7" class="kafelek" target="_blank">
+      <div class="tekst">Hungarian Defence</div>
+    </a>
+
+    <a href="#sekcja" id="kafelek8" class="kafelek">
+      <div class="tekst">5.e5</div>
+    </a>
+    <a href="#sekcja" id="kafelek9" class="kafelek">
+      <div class="tekst">Gambit Evansa</div>
+    </a>
+    <a href="strona1.html" id="kafelek10" class="kafelek">
+      <div class="tekst">Atak Maxa Lange</div>
+    </a>
+
+    <a href="strona2.html" id="kafelek11" class="kafelek">
+      <div class="tekst">Hungarian Defence Giuoco Pianissimo</div>
+    </a>
+
+    <a
+      href="https://example.com"
+      id="kafelek12"
+      class="kafelek"
+      target="_blank"
+    >
+      <div class="tekst">Atak smażonej wątróbki</div>
+    </a>
+
+    <a href="#sekcja" id="kafelek13" class="kafelek">
+      <div class="tekst">5.0-0</div>
+    </a>
+  </body>
+</html>
