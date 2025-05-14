@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Widoczne Kafelki</title>
+    <style>
+      body {
+        background-size: cover;
+        background-image: url("images/goblin2.png");
+        margin: 0;
+        height: 100vh;
+        background-color: #f0f0f0;
+        position: relative;
+        font-family: Arial, sans-serif;
+      }
+      #szach {
+        top: 10%;
+        left: 15%;
+        background-color: #f0f0f0;
+        width: 400px;
+        height: 400px;
+        position: relative;
+      }
+
+      .kafelek {
+        width: 12.5%;
+        height: 12.5%;
+        position: absolute;
+        cursor: pointer;
+        background-color: #4caf50; /* Zielony kafelek jako przykład */
+
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+        text-decoration: none;
+      }
+
+      .kafelek .tekst {
+        display: none;
+        color: white;
+        text-align: center;
+      }
+
+      .kafelek:hover .tekst {
+        display: block;
+      }
+
+      .kafelek:hover {
+        background-color: #388e3c; /* ciemniejszy zielony przy hoverze */
+      }
+
+      /* Rozmieszczenie kafelków */
+      #kafelek1 {
+        background-color: #ff9800;
+      }
+      #kafelek2 {
+        left: 12.5%;
+        background-color: #2196f3;
+      } /* niebieski */
+      #kafelek3 {
+        left: 25%;
+        background-color: #ff9800;
+      } /* pomarańczowy */
+      #kafelek4 {
+        left: 37.5%;
+        background-color: #9c27b0;
+      } /* fioletowy */
+      #kafelek5 {
+        left: 50%;
+      }
+      #kafelek6 {
+        left: 62.5%;
+        background-color: #2196f3;
+      } /* niebieski */
+      #kafelek7 {
+        left: 75%;
+        background-color: #ff9800;
+      } /* pomarańczowy */
+      #kafelek8 {
+        left: 87.5%;
+        background-color: #9c27b0;
+      } /* fioletowy */
+      #kafelek9 {
+        top: 12.5%;
+
+        background-color: #b51919;
+      } /* fioletowy */
+    </style>
+  </head>
+  <body>
+    <div id="szach">
+      <a href="strona1.html" id="kafelek1" class="kafelek">
+        <div class="tekst">5.d3</div>
+      </a>
+
+      <a href="strona2.html" id="kafelek2" class="kafelek">
+        <div class="tekst">5.d4</div>
+      </a>
+
+      <a
+        href="https://example.com"
+        id="kafelek3"
+        class="kafelek"
+        target="_blank"
+      >
+        <div class="tekst">Kafelek 3</div>
+      </a>
+
+      <a href="#sekcja" id="kafelek4" class="kafelek">
+        <div class="tekst">Kafelek 4</div>
+      </a>
+      <a href="strona1.html" id="kafelek5" class="kafelek">
+        <div class="tekst">5.d3</div>
+      </a>
+
+      <a href="strona2.html" id="kafelek6" class="kafelek">
+        <div class="tekst">5.d4</div>
+      </a>
+
+      <a
+        href="https://example.com"
+        id="kafelek7"
+        class="kafelek"
+        target="_blank"
+      >
+        <div class="tekst">Kafelek 3</div>
+      </a>
+
+      <a href="#sekcja" id="kafelek8" class="kafelek">
+        <div class="tekst">Kafelek</div>
+      </a>
+
+      <a href="#sekcja" id="kafelek9" class="kafelek">
+        <div class="tekst">Kafelek</div>
+      </a>
+    </div>
+  </body>
+</html>
