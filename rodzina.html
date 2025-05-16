@@ -6,25 +6,22 @@
     <title>muzeum</title>
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
         background-image: url("images/muzeum.png");
         background-size: cover;
+        background-position: center 30%;
+        background-attachment: fixed;
       }
       h1 {
         color: aliceblue;
       }
       .carousel-container {
         display: flex;
-        gap: 200px;
+        gap: 0%;
       }
       .carousel {
         width: 300px;
         overflow: hidden;
-        position: relative;
+        margin-left: 8%;
       }
       .slides {
         display: flex;
@@ -97,11 +94,15 @@
         width: 70%; /* albo np. 25%, zależnie od tego jak bardzo chcesz zmniejszyć */
       }
       .zmien3 {
-        float: left;
+        float: right;
       }
     </style>
   </head>
   <body>
+    <div class="zmien3">
+      <a href="zamek.html"><button>Wróć</button></a>
+    </div>
+
     <div class="carousel-container">
       <div class="carousel">
         <h1>Król</h1>
@@ -184,9 +185,6 @@
           <label for="slide8"></label>
           <label for="slide9">❯</label>
         </div>
-      </div>
-      <div class="zmien3">
-        <a href="zamek.html"><button>Wróć</button></a>
       </div>
     </div>
   </body>
