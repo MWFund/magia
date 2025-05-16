@@ -8,7 +8,12 @@
       body {
         background-image: url("images/jezioro.png");
         background-size: cover;
-        background-position: center; /* Wyśrodkowanie tła */
+        background-position: center 70%;
+
+        text-align: center;
+        margin: 0;
+        height: 100vh;
+        cursor: pointer;
       }
 
       .tile {
@@ -27,13 +32,13 @@
       }
 
       .tile-2 {
-        top: 30%;
+        top: 60%;
         left: 50%;
       }
 
       .tile-3 {
-        top: 15%;
-        left: 25%;
+        top: 45%;
+        left: 27%;
       }
       a {
         color: azure;
@@ -41,12 +46,12 @@
       }
 
       .tile-4 {
-        top: 70%;
+        top: 85%;
         left: 75%;
       }
 
       .tile-5 {
-        top: 80%;
+        top: 75%;
         left: 10%;
       }
       .image-container {
@@ -110,6 +115,20 @@
       }
       .zmien3 {
         float: right;
+      }
+      @media (max-width: 768px) {
+        .tile-5 {
+          top: 70%;
+          left: 44%;
+        }
+        .tile-4 {
+          top: 72%;
+          left: 75%;
+        }
+        .tile-3 {
+          top: 55%;
+          left: 8%;
+        }
       }
     </style>
   </head>
