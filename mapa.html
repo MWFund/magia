@@ -7,24 +7,21 @@
     <style>
       body {
         background-size: cover;
-       
+
         background-image: url("images/mapa2.png");
-        
       }
 
       .tile {
         position: absolute;
         width: 100px;
         height: 100px;
-       
+
         transition: background-color 0.3s ease, box-shadow 0.3s ease,
           transform 0.3s ease;
         border-radius: 8px;
-       
       }
 
       .tile:hover {
-       
         box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6); /* Dodajemy świecący efekt */
         transform: scale(1.1); /* Powiększamy kafelek o 10% */
       }
@@ -81,35 +78,29 @@
       }
       .zmien3 {
         float: right;
-       
       }
-       @media (max-width: 768px) {
+      @media (max-width: 768px) {
         body {
           background-size: 768px 1365px;
-        }}
+        }
+      }
     </style>
   </head>
   <body>
-    
     <div class="image-container">
-      
       <img src="images/jas2.png" alt="Obrazek w rogu" class="top-left-image" />
       <div class="image-caption">Gandalf</div>
-      
     </div>
     <div class="zmien3">
       <a href="kraina.html"><button>Wróć</button></a>
     </div>
-   
-    <div class="tile tile-1">
-      <h2>🔒</h2></a>
-    </div>
+
+    <div class="tile tile-1"><h2>🔒</h2></div>
     <div class="tile tile-2"><h2>🔒</h2></div>
     <div class="tile tile-3"><h2>🔒</h2></div>
-    <div class="tile tile-5"><a href="zamek.html"><h2>🔓
-</h2></a></div>
-    <div class="tile tile-4"><a href="jezioro.html"><h2>🔓
-</h2></a></div>
-    
+    <div class="tile tile-5"><h2>🔒</h2></div>
+    <div class="tile tile-4">
+      <a href="jezioro.html"><h2>🔓</h2></a>
+    </div>
   </body>
 </html>

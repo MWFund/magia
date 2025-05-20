@@ -2,29 +2,26 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>muzeum</title>
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
         background-image: url("images/drzewo2.png");
         background-size: cover;
+        background-position: center 30%;
+        background-attachment: fixed;
       }
       h1 {
         color: aliceblue;
       }
       .carousel-container {
         display: flex;
-        gap: 200px;
+        gap: 0%;
       }
       .carousel {
         width: 300px;
         overflow: hidden;
-        position: relative;
+        margin-left: 8%;
       }
       .slides {
         display: flex;
@@ -97,11 +94,27 @@
         width: 70%; /* albo np. 25%, zależnie od tego jak bardzo chcesz zmniejszyć */
       }
       .zmien3 {
-        float: left;
+        float: right;
+      }
+      @media (max-width: 1200px) {
+        body {
+          background-size: 1200px 900px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .carousel-container {
+          display: contents;
+          gap: 0%;
+        }
       }
     </style>
   </head>
   <body>
+    <div class="zmien3">
+      <a href="drzewo2.html"><button>Wróć</button></a>
+    </div>
+
     <div class="carousel-container">
       <div class="carousel">
         <h1>Król</h1>
@@ -184,9 +197,6 @@
           <label for="slide8"></label>
           <label for="slide9">❯</label>
         </div>
-      </div>
-      <div class="zmien3">
-        <a href="drzewo2.html"><button>Wróć</button></a>
       </div>
     </div>
   </body>
