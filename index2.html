@@ -209,6 +209,36 @@
         background-color: #333; /* Kolor aktywnej kropki */
         border-color: #000;
       }
+
+      .music-button {
+        padding: 15px 25px; /* Zwiększono padding dla lepszego wyglądu okrągłego przycisku */
+        margin-top: 30px; /* Dodano trochę odstępu od dołu innych elementów */
+        font-size: 110%; /* Lekko zmniejszony rozmiar czcionki, aby pasował do okrągłego kształtu */
+        cursor: pointer;
+        background-color: #eba627; /* Jasny, bursztynowy kolor tła */
+        color: #000000; /* Czarny kolor tekstu dla kontrastu */
+        border: 3px solid #f1f1f1; /* Grubsza biała ramka */
+        border-radius: 50%; /* Sprawia, że przycisk jest okrągły */
+        transition: all 0.3s ease;
+        width: 100px; /* Ustalona szerokość dla lepszego okrągłego kształtu */
+        height: 100px; /* Ustalona wysokość dla lepszego okrągłego kształtu */
+        display: flex; /* Umożliwia centrowanie tekstu w pionie i poziomie */
+        align-items: center; /* Centruje tekst w pionie */
+        justify-content: center; /* Centruje tekst w poziomie */
+        text-align: center; /* Wyrównuje tekst w przypadku wielu linii */
+        line-height: 1.2; /* Dostosuj, jeśli tekst jest wieloliniowy */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Delikatny cień dla głębi */
+      }
+
+      .music-button:hover {
+        background-color: #f5b342; /* Jaśniejszy bursztyn po najechaniu */
+        color: #333; /* Ciemniejszy tekst po najechaniu */
+        border-color: #fff; /* Biała ramka po najechaniu */
+        transform: scale(
+          1.05
+        ); /* Lekko mniejsze powiększenie, aby nie wychodził za bardzo */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Wyraźniejszy cień po najechaniu */
+      }
     </style>
   </head>
   <body>
@@ -305,5 +335,38 @@
       <a href="mag.html"><button>Mag</button></a>
       <a href="zajecia.html"><button>Nauczyciel</button></a>
     </div>
+    <audio id="background-music" loop>
+      <source src="Prolog.mp3" type="audio/mp3" />
+      Twój przeglądarka nie obsługuje elementu audio.
+    </audio>
+
+    <button id="toggle-music" class="music-button">Odtwórz/ Zatrzymaj</button>
+    <script>
+      const backgroundMusic = document.getElementById("background-music");
+      const toggleMusicButton = document.getElementById("toggle-music");
+
+      // Próba automatycznego odtwarzania po załadowaniu strony
+      // To może nie zadziałać z powodu polityki autoodtwarzania przeglądarek
+      document.addEventListener("DOMContentLoaded", () => {
+        backgroundMusic.play().catch((error) => {
+          console.log("Automatyczne odtwarzanie zablokowane:", error);
+          // Poinformuj użytkownika, że musi kliknąć, aby odtworzyć muzykę
+          alert(
+            'Twoja przeglądarka zablokowała automatyczne odtwarzanie muzyki. Kliknij "Odtwórz / Zatrzymaj muzykę", aby ją włączyć.'
+          );
+        });
+      });
+
+      // Obsługa przycisku do manualnego odtwarzania/zatrzymywania
+      if (toggleMusicButton) {
+        toggleMusicButton.addEventListener("click", () => {
+          if (backgroundMusic.paused) {
+            backgroundMusic.play();
+          } else {
+            backgroundMusic.pause();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
