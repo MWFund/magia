@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strona magii szachowej</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #000000;
+        display: flex;
+        flex-direction: column; /* ZMIANA: Układ elementów w kolumnie */
+        align-items: center; /* ZMIANA: Centrowanie dzieci w poziomie */
+        justify-content: center; /* Utrzymuje centrowanie w pionie, jeśli zawartość jest mniejsza od okna */
+        min-height: 100vh;
+        margin: 0;
+        padding: 1%; /* DODANO: Mały odstęp na górze i na dole body */
+        box-sizing: border-box; /* DODANO: Aby padding był wliczany w min-height */
+      }
+
+      .content {
+        width: 100%;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: "Georgia", serif;
+        font-size: 300%;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+        margin: 0;
+        letter-spacing: 10%;
+        color: #f1f1f1;
+      }
+
+      button {
+        padding: 1% 2%;
+        margin: 1%;
+        font-size: 120%;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #f1f1f1;
+        border: 2px solid #f1f1f1;
+        border-radius: 10%;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #1d1d1e;
+        color: #fff;
+        border-color: #eba627;
+        transform: scale(1.1);
+      }
+      .pure-css-carousel {
+        position: relative; /* Kluczowe dla pozycjonowania strzałek i kropek */
+        width: 90%; /* Szerokość karuzeli - dostosuj do swoich potrzeb */
+        max-width: 800px; /* Maksymalna szerokość karuzeli */
+        margin: 20px auto; /* Wyśrodkowanie karuzeli na stronie */
+        overflow: hidden; /* Ukrywa slajdy, które są poza aktualnym widokiem */
+        border-radius: 10px; /* Zaokrąglenie rogów karuzeli */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Cień dla efektu głębi */
+      }
+
+      .carousel-radio {
+        display: none; /* Ukrywa faktyczne przyciski radio */
+      }
+
+      .slides-container {
+        display: flex; /* Ustawia slajdy w jednym rzędzie */
+        width: 400%; /* Całkowita szerokość kontenera = 100% * liczba slajdów (tutaj 4) */
+        transition: transform 0.5s ease-in-out; /* Płynna animacja przejścia między slajdami */
+      }
+
+      .slide {
+        width: 25%; /* Szerokość pojedynczego slajdu = 100% / liczba slajdów (tutaj 4) */
+        flex-shrink: 0; /* Zapobiega kurczeniu się slajdów, jeśli nie mieszczą się w kontenerze */
+        box-sizing: border-box; /* Uwzględnia padding i border w szerokości elementu */
+      }
+
+      .slide img {
+        width: 100%; /* Obrazek wypełnia całą dostępną szerokość slajdu */
+        display: block; /* Usuwa domyślny margines pod obrazkiem */
+        height: auto; /* Zachowuje proporcje obrazka */
+        max-height: 500px; /* Opcjonalnie: maksymalna wysokość obrazków w karuzeli */
+        object-fit: cover; /* Skaluje obrazek, aby wypełnił kontener, przycinając go w razie potrzeby.
+                          Możesz też użyć 'contain', aby cały obrazek był widoczny (może zostawić puste przestrzenie). */
+      }
+
+      /* Logika zmiany slajdów w zależności od zaznaczonego przycisku radio */
+      #slide-radio1:checked ~ .slides-container {
+        transform: translateX(0%);
+      }
+      #slide-radio2:checked ~ .slides-container {
+        transform: translateX(-25%);
+      } /* Przesunięcie o 1 slajd */
+      #slide-radio3:checked ~ .slides-container {
+        transform: translateX(-50%);
+      } /* Przesunięcie o 2 slajdy */
+      #slide-radio4:checked ~ .slides-container {
+        transform: translateX(-75%);
+      } /* Przesunięcie o 3 slajdy */
+
+      /* Stylizacja strzałek nawigacyjnych */
+      .carousel-arrows {
+        position: absolute; /* Pozycjonowanie względem kontenera .pure-css-carousel */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Pozwala na klikanie "przez" ten kontener, jeśli strzałki nie są aktywne */
+      }
+
+      .carousel-arrows .arrow {
+        position: absolute;
+        top: 50%; /* Wyśrodkowanie w pionie */
+        transform: translateY(-50%);
+        width: 45px; /* Szerokość strzałki */
+        height: 45px; /* Wysokość strzałki */
+        background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
+        color: white; /* Kolor symbolu strzałki */
+        border-radius: 50%; /* Okrągły kształt */
+        cursor: pointer;
+        display: none; /* Domyślnie ukryte - pokażemy je tylko dla aktywnego slajdu */
+        align-items: center; /* Wyśrodkowanie symbolu strzałki w poziomie */
+        justify-content: center; /* Wyśrodkowanie symbolu strzałki w pionie */
+        font-size: 22px; /* Rozmiar symbolu strzałki */
+        user-select: none; /* Zapobiega zaznaczaniu tekstu strzałki */
+        pointer-events: auto; /* Umożliwia klikanie na same strzałki */
+        transition: background-color 0.3s ease;
+        z-index: 10; /* Strzałki nad slajdami */
+      }
+      .carousel-arrows .arrow:hover {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.8
+        ); /* Ciemniejsze tło po najechaniu */
+      }
+
+      .carousel-arrows .arrow.prev {
+        left: 15px; /* Odstęp od lewej krawędzi */
+      }
+      .carousel-arrows .arrow.next {
+        right: 15px; /* Odstęp od prawej krawędzi */
+      }
+
+      /* Symbole strzałek (znaki Unicode) */
+      .carousel-arrows .arrow.prev::before {
+        content: "\2039"; /* Symbol "<" (lewy grot strzałki) */
+      }
+      .carousel-arrows .arrow.next::before {
+        content: "\203A"; /* Symbol ">" (prawy grot strzałki) */
+      }
+
+      /* Pokazywanie odpowiednich strzałek dla aktywnego slajdu */
+      #slide-radio1:checked ~ .carousel-arrows .arrow-for-slide1 {
+        display: flex;
+      }
+      #slide-radio2:checked ~ .carousel-arrows .arrow-for-slide2 {
+        display: flex;
+      }
+      #slide-radio3:checked ~ .carousel-arrows .arrow-for-slide3 {
+        display: flex;
+      }
+      #slide-radio4:checked ~ .carousel-arrows .arrow-for-slide4 {
+        display: flex;
+      }
+
+      /* Stylizacja kropek nawigacyjnych */
+      .carousel-dots {
+        position: absolute; /* Pozycjonowanie względem kontenera .pure-css-carousel */
+        bottom: 20px; /* Odstęp od dolnej krawędzi */
+        left: 50%;
+        transform: translateX(-50%); /* Wyśrodkowanie kropek */
+        display: flex;
+        z-index: 10; /* Kropki nad slajdami */
+      }
+
+      .carousel-dots .dot {
+        width: 12px; /* Szerokość kropki */
+        height: 12px; /* Wysokość kropki */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.6
+        ); /* Kolor nieaktywnej kropki */
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 50%; /* Okrągły kształt */
+        margin: 0 6px; /* Odstęp między kropkami */
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+
+      .carousel-dots .dot:hover {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Jaśniejsza kropka po najechaniu */
+      }
+
+      /* Podświetlenie aktywnej kropki */
+      #slide-radio1:checked ~ .carousel-dots label[for="slide-radio1"],
+      #slide-radio2:checked ~ .carousel-dots label[for="slide-radio2"],
+      #slide-radio3:checked ~ .carousel-dots label[for="slide-radio3"],
+      #slide-radio4:checked ~ .carousel-dots label[for="slide-radio4"] {
+        background-color: #333; /* Kolor aktywnej kropki */
+        border-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pure-css-carousel">
+      <input
+        type="radio"
+        name="carousel-slide"
+        id="slide-radio1"
+        class="carousel-radio"
+        checked
+      />
+      <input
+        type="radio"
+        name="carousel-slide"
+        id="slide-radio2"
+        class="carousel-radio"
+      />
+      <input
+        type="radio"
+        name="carousel-slide"
+        id="slide-radio3"
+        class="carousel-radio"
+      />
+      <input
+        type="radio"
+        name="carousel-slide"
+        id="slide-radio4"
+        class="carousel-radio"
+      />
+
+      <div class="slides-container">
+        <div class="slide"><img src="images/h1.jpg" alt="Zdjęcie 1" /></div>
+        <div class="slide"><img src="images/h2.jpg" alt="Zdjęcie 2" /></div>
+        <div class="slide"><img src="images/h3.jpg" alt="Zdjęcie 3" /></div>
+        <div class="slide"><img src="images/h4.jpg" alt="Zdjęcie 4" /></div>
+      </div>
+
+      <div class="carousel-arrows">
+        <label
+          for="slide-radio4"
+          class="arrow prev arrow-for-slide1"
+          title="Poprzedni"
+        ></label>
+        <label
+          for="slide-radio2"
+          class="arrow next arrow-for-slide1"
+          title="Następny"
+        ></label>
+
+        <label
+          for="slide-radio1"
+          class="arrow prev arrow-for-slide2"
+          title="Poprzedni"
+        ></label>
+        <label
+          for="slide-radio3"
+          class="arrow next arrow-for-slide2"
+          title="Następny"
+        ></label>
+
+        <label
+          for="slide-radio2"
+          class="arrow prev arrow-for-slide3"
+          title="Poprzedni"
+        ></label>
+        <label
+          for="slide-radio4"
+          class="arrow next arrow-for-slide3"
+          title="Następny"
+        ></label>
+
+        <label
+          for="slide-radio3"
+          class="arrow prev arrow-for-slide4"
+          title="Poprzedni"
+        ></label>
+        <label
+          for="slide-radio1"
+          class="arrow next arrow-for-slide4"
+          title="Następny"
+        ></label>
+      </div>
+
+      <div class="carousel-dots">
+        <label for="slide-radio1" class="dot" title="Slajd 1"></label>
+        <label for="slide-radio2" class="dot" title="Slajd 2"></label>
+        <label for="slide-radio3" class="dot" title="Slajd 3"></label>
+        <label for="slide-radio4" class="dot" title="Slajd 4"></label>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Strona magii szachowej</h1>
+      <a href="karta5.html"><button>Uczeń Maga</button></a>
+      <a href="mag.html"><button>Mag</button></a>
+      <a href="zajecia.html"><button>Nauczyciel</button></a>
+    </div>
+  </body>
+</html>
