@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa</title>
+    <style>
+      body {
+        background-color: black;
+        background-size: cover;
+      }
+
+      .board {
+        float: left;
+
+        top: 10%;
+
+        background-image: url("images/m.jpg");
+        width: 700px;
+        height: 700px;
+        position: relative;
+      }
+      .goblin {
+        margin-left: 5%;
+        margin-top: 30%;
+        width: 300px;
+        float: left;
+      }
+      .tile {
+        position: absolute;
+        width: 12.5%;
+        height: 12.5%;
+
+        background-color: whitesmoke;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .tile:hover {
+        box-shadow: 0 8px 16px rgba(38, 38, 38, 0.6); /* Dodajemy świecący efekt */
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+      }
+
+      .tile.tile-16:hover {
+        background-color: red;
+      }
+
+      .tile-1 {
+      }
+
+      .tile-2 {
+        left: 25%;
+      }
+
+      .tile-3 {
+        left: 50%;
+      }
+
+      .tile-4 {
+        left: 75%;
+      }
+
+      .tile-5 {
+        top: 12.5%;
+        left: 12.5%;
+      }
+      .tile-6 {
+        top: 12.5%;
+        left: 37.5%;
+      }
+      .tile-7 {
+        top: 12.5%;
+        left: 62.5%;
+      }
+      .tile-8 {
+        top: 12.5%;
+        left: 87.5%;
+      }
+
+      .tile-9 {
+        top: 25%;
+      }
+
+      .tile-10 {
+        top: 25%;
+        left: 25%;
+      }
+
+      .tile-11 {
+        top: 25%;
+        left: 50%;
+      }
+
+      .tile-12 {
+        top: 25%;
+        left: 75%;
+      }
+
+      .tile-13 {
+        top: 37.5%;
+        left: 12.5%;
+      }
+      .tile-14 {
+        top: 37.5%;
+        left: 37.5%;
+      }
+      .tile-15 {
+        top: 37.5%;
+        left: 62.5%;
+      }
+      .tile-16 {
+        top: 37.5%;
+        left: 87.5%;
+      }
+
+      .tile-17 {
+        top: 50%;
+      }
+
+      .tile-18 {
+        top: 50%;
+        left: 25%;
+      }
+
+      .tile-19 {
+        top: 50%;
+        left: 50%;
+      }
+
+      .tile-20 {
+        top: 50%;
+        left: 75%;
+      }
+
+      .tile-21 {
+        top: 62.5%;
+        left: 12.5%;
+      }
+      .tile-22 {
+        top: 62.5%;
+        left: 37.5%;
+      }
+      .tile-23 {
+        top: 62.5%;
+        left: 62.5%;
+      }
+      .tile-24 {
+        top: 62.5%;
+        left: 87.5%;
+      }
+
+      .tile-25 {
+        top: 75%;
+      }
+
+      .tile-26 {
+        top: 75%;
+        left: 25%;
+      }
+
+      .tile-27 {
+        top: 75%;
+        left: 50%;
+      }
+
+      .tile-28 {
+        top: 75%;
+        left: 75%;
+      }
+      .tile-29 {
+        top: 87.5%;
+        left: 12.5%;
+      }
+      .tile-30 {
+        top: 87.5%;
+        left: 37.5%;
+      }
+      .tile-31 {
+        top: 87.5%;
+        left: 62.5%;
+      }
+      .tile-32 {
+        top: 87.5%;
+        left: 87.5%;
+      }
+
+      .tile1 {
+        position: absolute;
+        width: 12.5%;
+        height: 12.5%;
+
+        background-color: rgb(83, 40, 40);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .tile1:hover {
+        box-shadow: 0 8px 16px rgba(38, 38, 38, 0.6); /* Dodajemy świecący efekt */
+        transform: scale(1.1); /* Powiększamy kafelek o 10% */
+      }
+
+      .tile1-1 {
+        left: 12.5%;
+      }
+      .tile1-2 {
+        left: 37.5%;
+      }
+      .tile1-3 {
+        left: 62.5%;
+      }
+      .tile1-4 {
+        left: 87.5%;
+      }
+
+      .tile1-5 {
+        top: 12.5%;
+      }
+      .tile1-6 {
+        top: 12.5%;
+        left: 25%;
+      }
+      .tile1-7 {
+        top: 12.5%;
+        left: 50%;
+      }
+      .tile1-8 {
+        top: 12.5%;
+        left: 75%;
+      }
+      .tile1-9 {
+        top: 25%;
+        left: 12.5%;
+      }
+
+      .tile1-10 {
+        top: 25%;
+        left: 37.5%;
+      }
+
+      .tile1-11 {
+        top: 25%;
+        left: 62.5%;
+      }
+
+      .tile1-12 {
+        top: 25%;
+        left: 87.5%;
+      }
+
+      .tile1-13 {
+        top: 37.5%;
+      }
+      .tile1-14 {
+        top: 37.5%;
+        left: 25%;
+      }
+      .tile1-15 {
+        top: 37.5%;
+        left: 50%;
+      }
+      .tile1-16 {
+        top: 37.5%;
+        left: 75%;
+      }
+
+      .tile1-17 {
+        top: 50%;
+        left: 12.5%;
+      }
+
+      .tile1-18 {
+        top: 50%;
+        left: 37.5%;
+      }
+
+      .tile1-19 {
+        top: 50%;
+        left: 62.5%;
+      }
+
+      .tile1-20 {
+        top: 50%;
+        left: 87.5%;
+      }
+
+      .tile1-21 {
+        top: 62.5%;
+      }
+      .tile1-22 {
+        top: 62.5%;
+        left: 25%;
+      }
+      .tile1-23 {
+        top: 62.5%;
+        left: 50%;
+      }
+      .tile1-24 {
+        top: 62.5%;
+        left: 75%;
+      }
+      .tile1-25 {
+        top: 75%;
+        left: 12.5%;
+      }
+
+      .tile1-26 {
+        top: 75%;
+        left: 37.5%;
+      }
+
+      .tile1-27 {
+        top: 75%;
+        left: 62.5%;
+      }
+
+      .tile1-28 {
+        top: 75%;
+        left: 87.5%;
+      }
+      .tile1-29 {
+        top: 87.5%;
+      }
+      .tile1-30 {
+        top: 87.5%;
+        left: 25%;
+      }
+      .tile1-31 {
+        top: 87.5%;
+        left: 50%;
+      }
+      .tile1-32 {
+        top: 87.5%;
+        left: 75%;
+      }
+      .zmien3 {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="zmien3">
+      <a href="drzewo4.html"><button>Wróć</button></a>
+    </div>
+    <div class="goblin"><img src="images/gob.png" width="200px" /></div>
+    <div class="board">
+      <div class="tile tile-1">
+        <img src="images/w.png" width="100%" height="100%" />
+      </div>
+
+      <div class="tile tile-2">
+        <img src="images/g.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-3">
+        <img src="images/k.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-4"></div>
+      <div class="tile tile-5">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-6">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-7">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-8">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-9"></div>
+      <div class="tile tile-10">
+        <img src="images/s.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-11"></div>
+      <div class="tile tile-12"></div>
+      <div class="tile tile-13"></div>
+      <div class="tile tile-14"></div>
+      <div class="tile tile-15"></div>
+      <div class="tile tile-16"></div>
+      <div class="tile tile-17"></div>
+      <div class="tile tile-18">
+        <img src="images/g2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-19">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-20"></div>
+      <div class="tile tile-21"></div>
+      <div class="tile tile-22"></div>
+      <div class="tile tile-23">
+        <img src="images/s2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-24"></div>
+      <div class="tile tile-25">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-26"></div>
+      <div class="tile tile-27"></div>
+      <div class="tile tile-28">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-29">
+        <img src="images/s2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-30">
+        <img src="images/q2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile tile-31"></div>
+      <div class="tile tile-32">
+        <img src="images/w2.png" width="100%" height="100%" />
+      </div>
+      <!-- ----------------------------------- -->
+      <div class="tile1 tile1-1"></div>
+      <div class="tile1 tile1-2">
+        <img src="images/q.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-3"></div>
+      <div class="tile1 tile1-4">
+        <img src="images/w.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-5">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-6">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-7"></div>
+      <div class="tile1 tile1-8">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-9"></div>
+      <div class="tile1 tile1-10"></div>
+      <div class="tile1 tile1-11">
+        <img src="images/s.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-12"></div>
+      <div class="tile1 tile1-13"></div>
+      <div class="tile1 tile1-14">
+        <img src="images/g.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-15">
+        <img src="images/p.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-16"></div>
+      <div class="tile1 tile1-17"></div>
+      <div class="tile1 tile1-18"></div>
+      <div class="tile1 tile1-19"></div>
+      <div class="tile1 tile1-20"></div>
+      <div class="tile1 tile1-21"></div>
+      <div class="tile1 tile1-22">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-23"></div>
+      <div class="tile1 tile1-24"></div>
+      <div class="tile1 tile1-25">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-26">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-27">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-28">
+        <img src="images/p2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-29">
+        <img src="images/w2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-30">
+        <img src="images/g2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-31">
+        <img src="images/k2.png" width="100%" height="100%" />
+      </div>
+      <div class="tile1 tile1-32"></div>
+    </div>
+  </body>
+</html>
